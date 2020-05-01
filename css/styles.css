@@ -9,6 +9,9 @@
 00. BASE TYPOGRAPHY
 01. HEADER TOP CSS
 02. NAV SECTION CSS
+03. SECOND SECTION CSS
+04. EVENT SECTION CSS
+05. REASONS SECTION CSS
 ...
 ==================================================*/
 
@@ -138,16 +141,23 @@ header a:hover {
 
 .menuuu a {
   color: #45445a;
-  padding-left: 0.88em;
-  margin-left: 0.88em;
+  margin-left: 1.6em;
   font-weight: 600;
   font-size: 1.1em;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.menuuu a:hover {
+  color: #c4d114;
+  font-size: 1.1em;
+  border-top: 1px solid #c4d114;
+  border-bottom: 1px solid #c4d114;
 }
 
 .button-log a {
   background: #c4d114;
   color: #fff;
-
   width: 218px;
   display: block;
   text-align: center;
@@ -155,7 +165,7 @@ header a:hover {
   font-size: 1.1em;
   transition: all 0.5s ease;
   text-decoration: none;
-  border: 2px solid#c4d114;
+  border: 2px solid #c4d114;
   border-radius: 10px;
 }
 
@@ -169,4 +179,183 @@ header a:hover {
 .button-log-nav {
   display: flex;
   justify-content: flex-end;
+}
+
+/*------------------------------------------------
+			   03. SECOND SECTION CSS
+------------------------------------------------*/
+.second {
+  padding: 1.35em;
+}
+
+h4 {
+  margin: 1.67em 0 0.6em 0;
+  color: #45445a;
+  font-weight: bold;
+}
+
+.icon-1 {
+  font-size: 6em;
+  background: #554c86;
+  color: #fff;
+  transition: all 0.5s ease;
+  border-radius: 1em;
+  width: 1.7em;
+  height: 1.7em;
+  text-align: center;
+  padding-top: 34px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icon-2 {
+  font-size: 6em;
+  background: #8dd0d3;
+  color: #fff;
+  transition: all 0.5s ease;
+  border-radius: 1em;
+  width: 1.7em;
+  height: 1.7em;
+  text-align: center;
+  padding-top: 34px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icon-3 {
+  font-size: 6em;
+  background: #c4d114;
+  color: #fff;
+  transition: all 0.5s ease;
+  border-radius: 1em;
+  width: 1.7em;
+  height: 1.7em;
+  text-align: center;
+  padding-top: 34px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-1:hover,
+.icon-2:hover,
+.icon-3:hover {
+  background: rgb(255, 255, 255);
+  color: #8a8a8a;
+}
+
+.second-title h1 {
+  margin-top: 1.3em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #45445a;
+  font-size: 3.238em;
+  line-height: 1.1em;
+  font-weight: 400;
+  margin-bottom: 0.47em;
+}
+.second-title p {
+  text-align: center;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  color: #8a8a8a;
+}
+
+.second-img img {
+  height: 50px;
+}
+
+.second {
+  text-align: center;
+}
+
+/*------------------------------------------------
+			   04. EVENT SECTION CSS
+------------------------------------------------*/
+.event1 {
+  background: #463e77;
+  padding: 3em 0px;
+}
+
+.event ul {
+  list-style: none;
+  padding: 0em;
+}
+.event ul li {
+  font-size: 0.874em;
+  line-height: 2.05em;
+  color: #fff;
+}
+
+.event-date p {
+  color: #c4d114;
+  line-height: 1.3em;
+  font-weight: 600;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+.event-name h2 {
+  font-size: 2.8em;
+  line-height: 1.3em;
+  font-weight: 400;
+  color: #fff;
+}
+
+.event2 {
+  background: url(/img/yoga.jpg) no-repeat center top / cover;
+}
+/*------------------------------------------------
+			   05. REASONS SECTION CSS
+------------------------------------------------*/
+.reasons {
+  background: rgba(244, 245, 246, 0.9)
+    url(http://yogastudio.ancorathemes.com/wp-content/uploads/2015/11/Layer-44.png?id=1482) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.reasons {
+  background-position: center 65% !important;
+  background-repeat: no-repeat !important;
+}
+
+.reasons h1 {
+  margin-top: 1.3em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #45445a;
+  font-size: 3.238em;
+  line-height: 1.1em;
+  font-weight: 400;
+  margin-bottom: 0.47em;
+}
+
+.reasons div {
+  /* border: 3px solid red; */
+}
+
+.icon-4 {
+  font-size: 2em;
+  background: #c4d114;
+  color: #fff;
+  transition: all 0.5s ease;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  padding-top: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.reas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reasrow div {
+  margin: 30px 0px;
+}
+.reasrow i {
+  margin-right: 15px;
 }
