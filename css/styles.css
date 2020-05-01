@@ -1,0 +1,137 @@
+/*==================================================
+ Site Name: Gym
+ Description: Site about Gym
+ Author: @ivanvasenkov swayket@yandex.ru
+==================================================*/
+
+/*TABLE OF CONTENTS*/
+/*==================================================
+00. BASE TYPOGRAPHY
+01. HEADER TOP CSS
+02. NAV SECTION CSS
+...
+==================================================*/
+
+/*------------------------------------------------
+			   00. BASE TYPOGRAPHY
+------------------------------------------------*/
+body {
+  font-family: "Neucha", "Bellota Text", sans-serif;
+}
+/*------------------------------------------------
+			   01. HEADER TOP CSS
+------------------------------------------------*/
+.fas,
+.far {
+  color: #c4d114;
+  font-size: 0.7em;
+}
+
+header {
+  background-color: #f5f6f7;
+  color: #8a8a8a;
+  border-bottom: 2px solid rgba(222, 222, 222, 0.2);
+}
+
+header p,
+a {
+  color: #8a8a8a;
+  display: inline;
+  font-size: 0.875em;
+  font-weight: 500;
+  line-height: 2.8em;
+  transition-duration: 0.5s;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: #c4d114;
+}
+
+.header-time-num {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#time {
+  margin-right: 30px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  #time {
+    margin-right: 15px;
+  }
+
+  header p,
+  a {
+    color: #8a8a8a;
+    display: inline;
+    font-size: 0.775em;
+    font-weight: 500;
+    line-height: 2.8em;
+  }
+}
+
+@media (max-width: 575px) {
+  header p,
+  a {
+    color: #8a8a8a;
+    display: inline;
+    font-size: 0.775em;
+    font-weight: 500;
+    line-height: 2.3em;
+  }
+
+  .header-email,
+  .header-time-num {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 390px) {
+  header p,
+  a {
+    color: #8a8a8a;
+    display: inline;
+    font-size: 0.775em;
+    font-weight: 500;
+    line-height: 1.8em;
+  }
+
+  .header-email,
+  .header-time-num {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+/*------------------------------------------------
+			   02. NAV SECTION CSS
+------------------------------------------------*/
+.nav-section img {
+  width: 170px;
+}
+
+.menuuu,
+.nav-section__row {
+  display: flex;
+  align-items: center;
+}
+.menuuu a {
+  color: #45445a;
+  padding-left: 0.88em;
+  margin-left: 0.88em;
+  font-weight: 600;
+  font-size: 1.1em;
+}
