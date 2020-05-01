@@ -17,7 +17,9 @@
 ------------------------------------------------*/
 body {
   font-family: "Neucha", "Bellota Text", sans-serif;
+  font-family: "Bellota Text", sans-serif;
 }
+
 /*------------------------------------------------
 			   01. HEADER TOP CSS
 ------------------------------------------------*/
@@ -96,6 +98,7 @@ header a:hover {
     text-align: center;
   }
 }
+
 @media (max-width: 390px) {
   header p,
   a {
@@ -119,6 +122,10 @@ header a:hover {
 /*------------------------------------------------
 			   02. NAV SECTION CSS
 ------------------------------------------------*/
+.nav-section {
+  margin: 15px 0;
+}
+
 .nav-section img {
   width: 170px;
 }
@@ -128,10 +135,38 @@ header a:hover {
   display: flex;
   align-items: center;
 }
+
 .menuuu a {
   color: #45445a;
   padding-left: 0.88em;
   margin-left: 0.88em;
   font-weight: 600;
   font-size: 1.1em;
+}
+
+.button-log a {
+  background: #c4d114;
+  color: #fff;
+
+  width: 218px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  border: 2px solid#c4d114;
+  border-radius: 10px;
+}
+
+.button-log a:hover {
+  background: #ffffff;
+  color: #c4d114;
+  display: block;
+  text-align: center;
+}
+
+.button-log-nav {
+  display: flex;
+  justify-content: flex-end;
 }
