@@ -20,6 +20,12 @@
     <!--custom css-->
     <link rel="stylesheet" href="css/styles.css">
 
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <!--fontawesome css-->
     <script src="https://kit.fontawesome.com/0f13d382a3.js" crossorigin="anonymous"></script>
 </head>
@@ -70,7 +76,7 @@
                         <li><a class="menu__item" href="#">Контакты</a></li>
                     </ul>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 ">
                     <img src="img/logo.png" alt="Логотип фитнес-клуб">
                     <!-- <img src="/img/logo2.png" alt=""> -->
                 </div>
@@ -84,7 +90,7 @@
                     </nav>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 button-log-nav">
-                    <div class="button-log">
+                    <div class="button-log wow wobble">
                         <a href="#responsee">Перезвоните мне</a>
                     </div>
                 </div>
@@ -103,8 +109,9 @@
                 <div class="carousel-item active">
                     <img src="img/1.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Спорт</h1>
-                        <p>это неотъемлемая часть общественной жизни, <br> один из элементов системы ценностей
+                        <h1 class="wow slideInLeft">Спорт</h1>
+                        <p class="wow slideInRight">это неотъемлемая часть общественной жизни, <br> один из элементов
+                            системы ценностей
                             современной культуры</p>
                     </div>
                 </div>
@@ -162,32 +169,32 @@
             </div>
             <div class="row second">
                 <div class="col-md-4">
-                    <div class="icon">
+                    <div class="icon wow fadeInDownBig">
                         <i class="icon-1 fas fa-dumbbell"></i>
                     </div>
-                    <h4>
+                    <h4 class="wow fadeInLeft">
                         Фитнес-клуб
                     </h4>
-                    <p>Вы с лёгкостью раскроете свой творческий потенциал на 100%</p>
+                    <p class="wow fadeInLeftBig">Вы с лёгкостью раскроете свой творческий потенциал на 100%</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="test">
+                    <div class="test wow fadeInDownBig">
                         <i class="icon-2 fas fa-fist-raised"></i>
                     </div>
-                    <h4>
+                    <h4 class="wow  fadeInUp">
                         Тренажерный зал
                     </h4>
-                    <p>Идеальное место для тех, кто хочет повысить мышечный тонус, приобрести
+                    <p class="wow fadeInUpBig">Идеальное место для тех, кто хочет повысить мышечный тонус, приобрести
                         подтянутую фигуру.</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="test">
+                    <div class="test wow fadeInDownBig">
                         <i class="icon-3 fas fa-running"></i>
                     </div>
-                    <h4>
+                    <h4 class="wow fadeInRight">
                         Классы
                     </h4>
-                    <p>Широкий выбор программ - фитнес, аэробика, тренажерный зал...</p>
+                    <p class="wow fadeInRightBig">Широкий выбор программ - фитнес, аэробика, тренажерный зал...</p>
                 </div>
             </div>
     </section>
@@ -231,7 +238,7 @@
                     <div class="col-md-2 col-3">
                     </div>
                     <div class="col-md-10 col-5">
-                        <div class="button-log">
+                        <div class="button-log wow wobble">
                             <a href="#responsee">Перезвоните мне</a>
                         </div>
                     </div>
@@ -247,12 +254,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Причины выбрать наш фитнес-клуб</h1>
+                    <h1 class="wow fadeInDownBig">Причины выбрать наш фитнес-клуб</h1>
                 </div>
             </div>
             <div class="row reasrow">
 
-                <div class="col-md-5 reas left">
+                <div class="col-md-5 reas left wow fadeInLeft">
                     <div>
                         <h5><b>Причина 1</b></h5>
                         <p>В нашем фитнес-клубе максимально индивидуальный подход к каждому клиенту</p>
@@ -262,7 +269,7 @@
                     </div>
                 </div>
                 <div class="col-md-2"></div>
-                <div class="col-md-5 reas right">
+                <div class="col-md-5 reas right wow fadeInRightBig">
                     <div>
                         <i class="icon-4 fas fa-user-friends"></i>
                     </div>
@@ -273,7 +280,7 @@
                 </div>
             </div>
             <div class="row reasrow">
-                <div class="col-md-5 reas left">
+                <div class="col-md-5 reas left wow fadeInLeftBig">
                     <div>
                         <h5><b>Причина 2</b></h5>
                         <p>Неповторимая атмосфера уюта и доброжелательности</p>
@@ -283,7 +290,7 @@
                     </div>
                 </div>
                 <div class="col-md-2"></div>
-                <div class="col-md-5 reas right">
+                <div class="col-md-5 reas right wow fadeInRight">
                     <div>
                         <i class="icon-4 fas fa-layer-group"></i>
                     </div>
@@ -327,7 +334,7 @@
                                 <label class="form-check-label" for="exampleCheck1">Согласие на обработку персональных
                                     данных</label>
                             </div>
-                            <div class="hvr-wobble-bottom-div twobutt">
+                            <div class="hvr-wobble-bottom-div twobutt wow wobble">
                                 <input class="hvr-wobble-bottom" type="submit" value="Перезвоните мне">
                             </div>
                         </div>
@@ -341,37 +348,37 @@
         <div class="container">
             <div class="row second">
                 <div class="col-md-4">
-                    <div class="icon">
+                    <div class="icon wow flipInX">
                         <i class="icon-1 fas fa-home"></i>
                     </div>
-                    <h4>
+                    <h4 class="wow fadeInLeftBig">
                         Адрес:
                     </h4>
-                    <p>Москва, Волоколамское ш., 4/6</p>
+                    <p class="wow fadeInLeft">Москва, Волоколамское ш., 4/6</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="test">
+                    <div class="test  wow flipInX">
                         <i class="icon-2 fas fa-phone"></i>
                     </div>
-                    <h4>
+                    <h4 class="wow fadeInDown">
                         Телефон:
                     </h4>
-                    <p>+7(985) 874-33-03</p>
+                    <p class="wow fadeInDownBig">+7(985) 874-33-03</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="test">
+                    <div class="test wow flipInX">
                         <i class="icon-3 far fa-envelope"></i>
                     </div>
-                    <h4>
+                    <h4 class="wow fadeInRight">
                         Email:
                     </h4>
-                    <p>swayket@yandex.ru</p>
+                    <p class="wow fadeInRightBig">swayket@yandex.ru</p>
                 </div>
             </div>
     </section>
     <!--============= MAP =============-->
     <!-- https://yandex.ru/map-constructor/ -->
-    <iframe
+    <iframe class="wow rotateInDownRight"
         src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9c6a32390a9efe9e1edcecbb95039754069886735784eaa602e5dc6e12b40d9&amp;source=constructor"
         width="100%" height="277" frameborder="0"></iframe>
 
