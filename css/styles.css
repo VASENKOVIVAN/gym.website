@@ -12,6 +12,9 @@
 03. SECOND SECTION CSS
 04. EVENT SECTION CSS
 05. REASONS SECTION CSS
+06. GET BACK FORM CSS
+07. WHERE CSS
+08. FOOTER CSS
 ...
 ==================================================*/
 
@@ -312,7 +315,7 @@ h4 {
   background-position: center;
 }
 .reasons {
-  background-position: center 65% !important;
+  background-position: center 75% !important;
   background-repeat: no-repeat !important;
 }
 
@@ -354,8 +357,115 @@ h4 {
 }
 
 .reasrow div {
-  margin: 30px 0px;
+  margin: 20px 0px;
 }
+
 .reasrow i {
-  margin-right: 15px;
+  margin: 15px;
 }
+
+.left {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*------------------------------------------------
+			   06. GET BACK FORM CSS
+------------------------------------------------*/
+.response {
+  background-image: url(../img/bg3.webp);
+}
+
+.response__form {
+  margin: 45px 0;
+}
+
+.response h1 {
+  text-align: center;
+  padding-top: 45px;
+  color: #fff;
+}
+
+.response label,
+.response p {
+  color: #fff;
+}
+
+.twobutt {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.twobutt input {
+  background: #c4d114;
+  color: #fff;
+  width: 218px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  border: 2px solid #c4d114;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.twobutt input:hover {
+  background: #ffffff;
+  color: #c4d114;
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+@media (max-width: 575px) {
+}
+
+/*------------------------------------------------
+			   07. WHERE CSS
+------------------------------------------------*/
+.where a {
+}
+/*------------------------------------------------
+			   08. FOOTER CSS
+------------------------------------------------*/
+footer {
+  /*color: #7e7e7e;*/
+  font-size: 10px;
+  color: rgb(134, 134, 134);
+  background: rgb(241, 241, 241);
+}
+
+footer div {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+footer div p {
+  margin: 51px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 10px;
+  color: rgb(134, 134, 134);
+  transition: all 0.9s ease;
+}
+
+/*------------------------------------------------
+			   
+------------------------------------------------*/
