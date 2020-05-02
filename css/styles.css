@@ -84,44 +84,43 @@ header a:hover {
     font-weight: 500;
     line-height: 2.8em;
   }
+
+  .cent > div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 575px) {
+  #time {
+    margin-right: 15px;
+  }
+
   header p,
   a {
     color: #8a8a8a;
+
     display: inline;
     font-size: 0.775em;
     font-weight: 500;
-    line-height: 2.3em;
+    line-height: 2.8em;
   }
 
-  .header-email,
-  .header-time-num {
+  .cent > div {
     justify-content: center;
     display: flex;
     align-items: center;
     text-align: center;
   }
-}
 
-@media (max-width: 390px) {
-  header p,
-  a {
-    color: #8a8a8a;
-    display: inline;
-    font-size: 0.775em;
-    font-weight: 500;
-    line-height: 1.8em;
-  }
-
-  .header-email,
   .header-time-num {
+    flex-wrap: wrap;
     justify-content: center;
     display: flex;
     align-items: center;
     text-align: center;
-    flex-direction: column;
   }
 }
 
@@ -183,7 +182,95 @@ header a:hover {
   display: flex;
   justify-content: flex-end;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .menuuu a {
+    color: #45445a;
+    margin-left: 0.5em;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .menuuu a {
+    color: #45445a;
+    margin-left: 1.1em;
+    line-height: 2.5;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  .menuuu {
+    display: flex;
+  }
+
+  .nav-section__row div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .menuuu {
+    display: flex;
+  }
+
+  .nav-section__row div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .button-log-nav div {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .menuuu {
+    display: flex;
+  }
+
+  .nav-section__row div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .button-log-nav div {
+    display: none;
+  }
+  nav a {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+}
+/*------------------------------------------------
+			   2.5 карусель
+------------------------------------------------*/
+
+.car p {
+  font-size: 1.5em;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .car p {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+@media (max-width: 575px) {
+}
+
+@media (max-width: 390px) {
+}
 /*------------------------------------------------
 			   03. SECOND SECTION CSS
 ------------------------------------------------*/
@@ -270,6 +357,29 @@ h4 {
   text-align: center;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+@media (max-width: 575px) {
+  .second h1 {
+    font-size: 2em;
+  }
+  .second-title p {
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #8a8a8a;
+  }
+}
+
+@media (max-width: 390px) {
+}
 /*------------------------------------------------
 			   04. EVENT SECTION CSS
 ------------------------------------------------*/
@@ -277,7 +387,9 @@ h4 {
   background: #463e77;
   padding: 3em 0px;
 }
-
+.event > div {
+  margin: 0px;
+}
 .event ul {
   list-style: none;
   padding: 0em;
@@ -304,6 +416,24 @@ h4 {
 
 .event2 {
   background: url(/img/yoga.jpg) no-repeat center top / cover;
+
+  /* background: url(/img/yoga.jpg) no-repeat center top / cover; */
+}
+@media (max-width: 575px) {
+  .event-name h2 {
+    font-size: 2em;
+    line-height: 1.3em;
+    font-weight: 400;
+    color: #fff;
+  }
+  .event ul li {
+    font-size: 0.704em;
+    line-height: 2.05em;
+    color: #fff;
+  }
+}
+
+@media (max-width: 390px) {
 }
 /*------------------------------------------------
 			   05. REASONS SECTION CSS
@@ -377,6 +507,38 @@ h4 {
   align-items: center;
 }
 
+@media (min-width: 576px) and (max-width: 767px) {
+  .reasrow div {
+    margin: 5px 0px;
+  }
+
+  .reasons {
+    background-position: center -500% !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .reasrow div {
+    margin: 5px 0px;
+  }
+
+  .reasons {
+    background-position: center -500% !important;
+    background-repeat: no-repeat !important;
+  }
+  .reasons h1 {
+    margin-top: 1.3em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #45445a;
+    font-size: 2.238em;
+    line-height: 1.1em;
+    font-weight: 400;
+    margin-bottom: 0.47em;
+  }
+}
 /*------------------------------------------------
 			   06. GET BACK FORM CSS
 ------------------------------------------------*/
@@ -469,3 +631,145 @@ footer a {
 /*------------------------------------------------
 			   
 ------------------------------------------------*/
+/*----------Бургер start------------------*/
+
+@media (min-width: 575px) {
+  .hamburger-menu ul,
+  .hamburger-menu input,
+  .hamburger-menu label {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .menuuu {
+    /* display: none; */
+  }
+}
+@media (max-width: 575px) {
+  #menu__toggle {
+    opacity: 0;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 103px;
+    left: 20px;
+
+    width: 26px;
+    height: 26px;
+
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #c4d114;
+
+    transition-duration: 0.25s;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+
+    width: 300px;
+    height: 100%;
+
+    margin: 0;
+    padding: 80px 0;
+
+    list-style: none;
+
+    background-color: rgb(10, 178, 137, 0.9);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+
+    transition-duration: 0.25s;
+  }
+
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+
+    color: rgb(253, 253, 253);
+
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition-duration: 0.25s;
+  }
+  .menu__item:hover {
+    background-color: rgba(224, 26, 26, 0.2);
+  }
+}
+@media (max-width: 408px) {
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 138px;
+    left: 20px;
+
+    width: 26px;
+    height: 26px;
+
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+@media (max-width: 289px) {
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 175px;
+    left: 20px;
+
+    width: 26px;
+    height: 26px;
+
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+/*----------Бургер end------------------*/
