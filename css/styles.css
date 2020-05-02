@@ -387,6 +387,11 @@ h4 {
   background: #463e77;
   padding: 3em 0px;
 }
+
+.event1 > div {
+  margin: 0px;
+}
+
 .event > div {
   margin: 0px;
 }
