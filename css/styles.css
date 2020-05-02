@@ -420,8 +420,7 @@ h4 {
 }
 
 .event2 {
-  background: url(/img/yoga.jpg) no-repeat center top / cover;
-
+  background-image: url(../img/yoga.jpg) no-repeat center top / cover;
   /* background: url(/img/yoga.jpg) no-repeat center top / cover; */
 }
 @media (max-width: 575px) {
