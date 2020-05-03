@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--title-->
-    <title>Услуги Фитнес-клуба</title>
+    <title>Контакты Фитнес-клуба</title>
     <link rel="icon" href="img/iconka.png">
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
@@ -28,6 +28,9 @@
     </script>
     <!--fontawesome css-->
     <script src="https://kit.fontawesome.com/0f13d382a3.js" crossorigin="anonymous"></script>
+    <!--googleapis css-->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script> -->
+
 </head>
 
 <body>
@@ -83,10 +86,10 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <nav class="menuuu">
                         <a href="index.html">Главная</a>
-                        <a style="color: #c4d114;" class="active" href="services.html">Услуги</a>
+                        <a href="services.html">Услуги</a>
                         <a href="trainers.html">Тренеры</a>
                         <a href="subscription.html">Абонементы</a>
-                        <a href="contacts.html">Контакты</a>
+                        <a style="color: #c4d114;" class="active" href="contacts.html">Контакты</a>
                     </nav>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 button-log-nav">
@@ -102,105 +105,54 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h3>Услуги</h3>
+                    <h3>Контакты</h3>
                 </div>
                 <div class="col-6 arrow">
                     <a href="index.html">Главная </a>
                     <i class="fas fa-arrow-right"></i>
-                    <p>Услуги</p>
+                    <p>Контакты</p>
                 </div>
             </div>
         </div>
     </section>
-    <!--============= 04. services-card =============-->
-    <section class="services-card">
+    <!--============= 04. contacts =============-->
+    <section class="contacts">
         <div class="container">
-            <div class="row cardss">
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-fit.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Фитнес</h5>
-                            <p class="card-text">Фитнес — вид физической активности, который направлен на поддержание
-                                общей физической формы.</p>
-                            <p class="btn btn-primary">1000р.</p>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 map">
+
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9c6a32390a9efe9e1edcecbb95039754069886735784eaa602e5dc6e12b40d9&amp;source=constructor"
+                        width="400" height="400" frameborder="0" style="border-radius:200px;"></iframe>
+
+
                 </div>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/22.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Аэробика</h5>
-                            <p class="card-text">Аэробика — гимнастика, состоящая из аэробных упражнений под ритмичную
-                                музыку.</p>
-                            <p class="btn btn-primary">1000р.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-pila.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Пилатес</h5>
-                            <p class="card-text">Пилатес — система физических упражнений, разработанная Йозефом
-                                Пилатесом в начале XX века.</p>
-                            <p class="btn btn-primary">1000р.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row cardss">
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-zal.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Тренажерный зал
-                            </h5>
-                            <p class="card-text">Специально оборудованное помещение, и предназначенное для проведения
-                                силовых
-                                тренировок.</p>
-                            <p class="btn btn-primary">1000р.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-swim.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Бассейн
-                            </h5>
-                            <p class="card-text">Скиммерный бассейн - это наиболее распространенный вид современного
-                                плавательного бассейна.</p>
-                            <p class="btn btn-primary">1000р.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-yoga.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Йога</h5>
-                            <p class="card-text">Понятие в индийской культуре, означающее совокупность
-                                различных духовных и физических практик.</p>
-                            <p class="btn btn-primary">1000р.</p>
-                        </div>
-                    </div>
+                <div class="col-sm-12 col-md-6">
+                    <h3 class="wow fadeInLeftBig">Адрес: </h3>
+                    <p class="wow fadeInRightBig">Москва, Волоколамское ш., 4/6</p>
+                    <h3 class="wow fadeInLeftBig">Тел: </h3>
+                    <p class="wow fadeInRightBig">+7 (985) 874-33-03</p>
+                    <h3 class="wow fadeInLeftBig">E-mail:</h3>
+                    <p class="wow fadeInRightBig">swayket@yandex.ru</p>
+                    <h3 class="wow fadeInLeftBig">Часы работы:</h3>
+                    <p class="wow fadeInRightBig">Пн-Пт: 8:00 - 23:00<br>
+                        Сб-Вс: 8:00 - 22:00</p>
+                    <h3 class="wow fadeInLeftBig">Адрес в сети интернет: </h3>
+                    <p class="wow fadeInRightBig"> vasenkovivan.github.io/gym.website/</p>
+
+                    <!--круглый гугл  -->
+                    <!-- <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2241.982183349251!2d37.49787631537423!3d55.81090969497716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54837ca747699%3A0xddf76528b536d2bb!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JDQstC40LDRhtC40L7QvdC90YvQuSDQmNC90YHRgtC40YLRg9GC!5e0!3m2!1sru!2sru!4v1588494506867!5m2!1sru!2sru"
+                        width="300" height="300" frameborder="0" style="border:20px solid #f83a3a;border-radius:250px;"
+                        allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
                 </div>
             </div>
         </div>
     </section>
 
 
-
-
-
-
-
-
-
-
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR8P72HMX3zllKeeZt8X89dJWMEu0LSX8&callback=myMap"
+        async defer></script>
 
     <!--============= 07. FOOTER =============-->
     <footer>

@@ -140,7 +140,11 @@ header a:hover {
   display: flex;
   align-items: center;
 }
-
+.active {
+  font-size: 1.1em;
+  border-top: 1px solid #c4d114;
+  border-bottom: 1px solid #c4d114;
+}
 .menuuu a {
   color: #45445a;
   margin-left: 1.6em;
@@ -835,7 +839,41 @@ footer a {
   margin: 20px 0px;
 }
 
-.btn-primary {
+.cardss {
   justify-content: center;
   display: flex;
+}
+/*------------------------------------------------
+			   04. sub
+------------------------------------------------*/
+.sub p {
+  color: black;
+}
+
+.multi > div {
+  width: 100%;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+@media (max-width: 575px) {
+}
+
+/*------------------------------------------------
+			   04. contact-map
+------------------------------------------------*/
+/* .contact- {
+  border: 20px solid #f83a3a;
+  border-radius: 70px;
+} */
+
+.map {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.contacts .row {
+  padding: 50px;
 }
