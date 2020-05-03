@@ -843,6 +843,31 @@ footer a {
   justify-content: center;
   display: flex;
 }
+
+.services-card a {
+  text-decoration: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.services-card .btn-primary {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .trainers p {
+    font-size: 0.8rem;
+  }
+  .trainers h5 {
+    font-size: 0.82rem;
+    font-weight: 900;
+  }
+}
+
 /*------------------------------------------------
 			   04. sub
 ------------------------------------------------*/
