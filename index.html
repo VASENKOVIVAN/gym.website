@@ -310,7 +310,7 @@
                 <div class="col-md-3"> </div>
                 <div class="col-md-6">
                     <!-- <form action="dbconnect.php" method="POST" id="form"> -->
-                    <form action="send.php" method="POST" id="form">
+                    <form action="index-send.php" method="POST" id="form">
                         <!-- <form action="mail.php" method="POST" id="form"> -->
                         <div class="response__form">
 
@@ -441,7 +441,7 @@
         $('#form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: 'send.php',
+                url: 'index.send.php',
                 type: 'POST',
                 contentType: false,
                 processData: false,

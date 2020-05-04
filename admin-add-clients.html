@@ -41,7 +41,7 @@
                 <div class="admin-right">
                     <h1>Добавить клиента</h1>
 
-                    <form action="clients.php" method="POST" id="form" class="add-client-form">
+                    <form action="admin-add-clients.html" method="POST" id="form" class="add-client-form">
 
                         <div class="formfactor">
                             <p>Фамилия:</p>
@@ -99,7 +99,7 @@
         $('#form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: 'clients.php',
+                url: 'admin-add-clients.php',
                 type: 'POST',
                 contentType: false,
                 processData: false,
