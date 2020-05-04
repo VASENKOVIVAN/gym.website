@@ -399,7 +399,8 @@
     <footer>
         <div class="container">
             <div class="row">
-                <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого использования</b>
+                <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого
+                        использования</b>
                     <br>
                     Copyright ©2020 -
 
@@ -427,12 +428,11 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="/js/jquery.maskedinput.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="/js/pushh.js"></script> -->
 </body>
 
 </html>
 <!--=============  =============-->
-<script src="jquery-3.4.0.min.js"></script>
+<script src="/js/jquery-3.4.0.min.js"></script>
 <script>
     // Отправка данных на сервер
     $('#form').trigger('reset');
@@ -446,22 +446,9 @@
                 contentType: false,
                 processData: false,
                 data: new FormData(this),
-                success: function (msg) {
-                    console.log(msg);
-                    if (msg == 'ok') {
-                        alert('Сообщение отправлено');
-                        $('#form').trigger('reset'); // очистка формы
-                    }
-
-                    // else {
-                    //     alert('Ошибка');
-                    // }
-
-                    else {
-                        alert('Сообщение отправлено');
-                    }
-                }
             });
+            alert('Сообщение отправлено да');
+            $('#form').trigger('reset'); // очистка формы
         });
     });
 </script>
