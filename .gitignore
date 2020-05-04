@@ -3,6 +3,6 @@ all_users.php
 login.php
 index-send.php
 exit.php
-connect.
+# connect.php
 admin-add-clients.php
 validation-form/
