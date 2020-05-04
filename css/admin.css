@@ -1,0 +1,57 @@
+.navi {
+  display: flex;
+  margin-left: 50px;
+  flex-direction: column;
+}
+
+.navi-logo {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.adm a {
+  color: #45445a;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.texttt {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.adm > div {
+  margin: 0;
+}
+
+.colss > div {
+  padding: 0px;
+}
+.text-top h3 {
+  padding-top: 12px;
+  padding-left: 30px;
+}
+
+/*1111111111111111111  */
+
+/* .formfactor p {
+  display: inline;
+} */
+.admin-right {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.add-client-form p {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.add-client-form input {
+  width: 400px;
+}
+#button {
+  margin-top: 30px;
+}

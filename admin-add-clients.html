@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title-->
+    <title>Панель управления Фитнес-клуба</title>
+    <link rel="icon" href="img/iconka.png">
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!--custom css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--admin css-->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <section class="adm">
+        <div style=" height: 100vh;" class="row colss">
+            <div style="background: #c4d114; width: 100vh;" class="col-md-3">
+                <div class="navi-logo">
+                    <img style="width: 250px;" src="img/logo-admin.png" alt="Логотип фитнес-клуб">
+                </div>
+                <div class="navi">
+                    <a href="index.html">Сайт Фитнес-клуба</a>
+                    <a href="admin-main.html">Главная</a>
+                    <a href="admin-add-clients.html">Добавление клиентов</a>
+                    <a href="#">Скоро</a>
+                    <a href="#">Скоро</a>
+                    <a href="#">Скоро</a>
+                    <a href="#">Скоро</a>
+                </div>
+            </div>
+            <div class="col-md-9 main-text">
+                <div id="bluelinetop" class="text-top" style="background: #8dd0d3; height: 60px;">
+                    <h3>Панель управления</h3>
+                </div>
+                <div class="admin-right">
+                    <h1>Добавить клиента</h1>
+
+                    <form action="clients.php" method="POST" id="form" class="add-client-form">
+
+                        <div class="formfactor">
+                            <p>Фамилия:</p>
+                            <input type="text" name="surname" placeholder="Васенков"></input>
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Имя:</p>
+                            <input type="text" name="name" placeholder="Иван"></input>
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Отчество:</p>
+                            <input type="text" name="patronymic" placeholder="Викторович"></input>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div class="formfactor">
+                            <p>Адрес:</p>
+                            <input type="text" name="address" placeholder="Москва, Волоколамское ш., 4/6">
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Телефон:</p>
+                            <input type="text" name="tel" placeholder="+7 (985) 874-33-03"></input>
+                        </div>
+
+                        <div id="button">
+                            <input type="submit" value="Добавить нового клиента">
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--============= 04. services-card =============-->
+
+    <!--  -->
+
+</body>
+
+</html>
+<!-- =============  =============-->
+<script src="/js/jquery-3.4.0.min.js"></script>
+<script>
+    // Отправка данных на сервер
+    $('#form').trigger('reset');
+    $(function () {
+        'use strict';
+        $('#form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'clients.php',
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                data: new FormData(this),
+            });
+            alert('Новый клиент добавлен в Базу Данных\n\Данные высланы на почту: swayket@yandex.ru');
+            $('#form').trigger('reset'); // очистка формы
+        });
+    });
+</script>
