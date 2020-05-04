@@ -32,6 +32,7 @@
                     <a href="#">Скоро</a>
                     <a href="#">Скоро</a>
                     <a href="#">Скоро</a>
+                    <a href="/exit.php">ВЫЙТИ</a>
                 </div>
             </div>
             <div class="col-md-9 main-text">
