@@ -29,7 +29,7 @@
                     <a href="admin-main.html">Главная</a>
                     <a href="admin-add-clients.html">Добавление клиентов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
-                    <a href="#">Скоро</a>
+                    <a href="#">Скооро</a>
                     <a href="#">Скоро</a>
                     <a href="#">Скоро</a>
                 </div>
@@ -38,12 +38,27 @@
                 <div id="bluelinetop" class="text-top" style="background: #8dd0d3; height: 60px;">
                     <h3>Панель управления</h3>
                 </div>
-                <div style=" padding-top: 200px;" class="texttt">
-                    <h1>Выберите один из пунктов <br> управления </h1>
+                <div class="admin-right">
+                    <h1>Клиенты</h1>
+
+
+
+                    <form method="post" action="all_users.php">
+                        <input id="submit" type="submit" value="Вывести всех пользователей"><br />
+                    </form>
+
+
+                    </table>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!--============= 04. services-card =============-->
+
+    <!--  -->
+
 </body>
 
 </html>
@@ -57,13 +72,13 @@
         $('#form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: 'clients.php',
+                url: 'admin-add-clients.php',
                 type: 'POST',
                 contentType: false,
                 processData: false,
                 data: new FormData(this),
             });
-            alert('Сообщение отправлено да');
+            alert('Новый клиент добавлен в Базу Данных\n\Данные высланы на почту: swayket@yandex.ru');
             $('#form').trigger('reset'); // очистка формы
         });
     });
