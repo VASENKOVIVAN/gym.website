@@ -309,12 +309,13 @@
             <div class="row">
                 <div class="col-md-3"> </div>
                 <div class="col-md-6">
-                    <form action="reg.php" method="POST" id="form">
+                    <!-- <form action="dbconnect.php" method="POST" id="form"> -->
+                    <form action="send.php" method="POST" id="form">
                         <!-- <form action="mail.php" method="POST" id="form"> -->
                         <div class="response__form">
 
                             <div class="inp">
-                                <p>Ваше имяz: </p>
+                                <p>Ваше имя: </p>
                                 <p><input class="form-control" type="text" name="name" placeholder="Ольга Трусова"></p>
                             </div>
 
@@ -346,7 +347,7 @@
                             <div class="hvr-wobble-bottom-div twobutt wow wobble">
                                 <input class="hvr-wobble-bottom" type="submit" value="Перезвоните мне">
                             </div>
-
+                            <a href="">Вернуться на сайт</a>";
                         </div>
 
                     </form>
@@ -426,6 +427,7 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="/js/jquery.maskedinput.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="/js/pushh.js"></script> -->
 </body>
 
 </html>
@@ -449,8 +451,14 @@
                     if (msg == 'ok') {
                         alert('Сообщение отправлено');
                         $('#form').trigger('reset'); // очистка формы
-                    } else {
-                        alert('Ошибка');
+                    }
+
+                    // else {
+                    //     alert('Ошибка');
+                    // }
+
+                    else {
+                        alert('Сообщение отправлено');
                     }
                 }
             });
