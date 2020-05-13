@@ -10,15 +10,16 @@
     <link rel="icon" href="img/iconka.png">
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     <!--Bootstrap css-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!--custom css-->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!--login css-->
+    <link rel="stylesheet" href="css/login.css">
 
     <!--animate css-->
     <link rel="stylesheet" href="css/animate.css">
@@ -83,7 +84,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <nav class="menuuu">
                         <a href="index.html">Главная</a>
-                        <a style="color: #c4d114;" class="active" href="services.html">Услуги</a>
+                        <a href="services.html">Услуги</a>
                         <a href="trainers.html">Тренеры</a>
                         <a href="subscription.html">Абонементы</a>
                         <a href="contacts.html">Контакты</a>
@@ -102,95 +103,127 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h3>Услуги</h3>
+                    <h3>Вход в аккаунт</h3>
                 </div>
                 <div class="col-6 arrow">
                     <a href="index.html">Главная </a>
                     <i class="fas fa-arrow-right"></i>
-                    <p>Услуги</p>
+                    <p>Вход</p>
                 </div>
             </div>
         </div>
     </section>
     <!--============= 04. services-card =============-->
-    <section class="services-card">
+
+    <section class="login">
         <div class="container">
-            <div class="row cardss">
-                <div class="col-sm-6 col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-fit.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Фитнес</h5>
-                            <p class="card-text">Фитнес — вид физической активности, который направлен на поддержание
-                                общей физической формы.</p>
-                            <a href="subscription.html" class="btn btn-primary">Купить абонемент</a>
+            <?php
+            if ($_COOKIE['user'] == '') :
+            ?>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 get-panelad">
+                        <h3>Регистрация</h3>
+
+                        <form action="/validation-form/check.php" method="POST">
+                            <p>Логин</p>
+                            <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
+
+                            <p>Имя</p>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Васенков Иван"><br>
+
+                            <p>Пароль</p>
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
+
+                            <input class="hvr-wobble-bottom" type="submit" value="Зарегистрироваться">
+
+                        </form>
+                    </div>
+
+                    <!-- <div class="col-md-3"></div> -->
+                    <div class="col-12 col-md-6 get-panelad">
+                        <div>
+                            <h3>Вход в панель управления</h3>
+                        </div>
+                        <div>
+                            <form action="/validation-form/auth.php" method="POST">
+                                <div>
+                                    <p>Логин</p>
+                                    <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
+                                </div>
+
+                                <div>
+                                    <p>Пароль</p>
+                                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
+
+                                </div>
+
+                                <!-- <input class="hvr-wobble-bottom" type="submit" value="Авторизироваться"> -->
+
+                                <div class="hvr-wobble-bottom-div twobutt wow wobble">
+                                    <input class="hvr-wobble-bottom" type="submit" value="Авторизироваться">
+                                </div>
+
+                            </form>
                         </div>
                     </div>
+                    <!-- <div class="col-md-3"></div> -->
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/22.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Аэробика</h5>
-                            <p class="card-text">Аэробика — гимнастика, состоящая из аэробных упражнений под ритмичную
-                                музыку.</p>
-                            <a href="subscription.html" class="btn btn-primary">Купить абонемент</a>
+
+
+
+            <?php else : ?>
+
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
+                                <p style="text-align: center;">Имя пользователя: <b><?= $_COOKIE['user'] ?></b> </p>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
+                                <p style="text-align: center;">Имя пользователя: <b><?= $_COOKIE[$user['name']] ?></b> </p>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <!-- <p style="margin-bottom:7px; text-align: center;">Чтобы зайти в панель управления нажмите:</p>
+                                <div style="margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
+                                    <a href="admin-main.html">Панель управления</a>
+                                </div> -->
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <p style="margin-bottom:7px; text-align: center;">Чтобы выйти нажмите</p>
+                                <div style=" margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
+                                    <a style="background: #d13a14;" href="/exit.php">Выйти</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-pila.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Пилатес</h5>
-                            <p class="card-text">Пилатес — система физических упражнений, разработанная Йозефом
-                                Пилатесом в начале XX века.</p>
-                            <a href="subscription.html" class="btn btn-primary">Купить абонемент</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row cardss">
-                <div class="col-sm-6 col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-zal.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Тренажерный зал
-                            </h5>
-                            <p class="card-text">Специально оборудованное помещение, и предназначенное для проведения
-                                силовых
-                                тренировок.</p>
-                            <a href="subscription.html" class="btn btn-primary">Купить абонемент</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-swim.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Бассейн
-                            </h5>
-                            <p class="card-text">Скиммерный бассейн - это наиболее распространенный вид современного
-                                плавательного бассейна.</p>
-                            <a href="subscription.html" class="btn btn-primary">Купить абонемент</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/serv-yoga.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Йога</h5>
-                            <p class="card-text">Понятие в индийской культуре, означающее совокупность
-                                различных духовных и физических практик.</p>
-                            <a href="subscription.html" class="btn btn-primary">Купить абонемент</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </section>
+
+
+                <!-- <p>Привет <?= $_COOKIE['user'] ?>. Чтобы выйти нажмите <a href="/exit.php">здесь</a>.</p> -->
+            <?php endif; ?>
+
+
+
+            <div class="col-md-3"></div>
+
+        </div>
         </div>
     </section>
-
 
 
 
@@ -210,8 +243,7 @@
                     <br>
                     Copyright ©2020 -
 
-                    <a
-                        href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
+                    <a href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
                         Moscow</a> -
 
                     <a href="mailto:swayket@yandex.ru?subject=Отзыв о сайте math.website">

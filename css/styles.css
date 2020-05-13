@@ -182,6 +182,27 @@ header a:hover {
   text-align: center;
 }
 
+.button-exit a {
+  background: #d18514;
+  color: #fff;
+  width: 218px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  border: 2px solid #c4d114;
+  border-radius: 10px;
+}
+
+.button-exit a:hover {
+  background: #ffffff;
+  color: #c4d114;
+  display: block;
+  text-align: center;
+}
+
 .button-log-nav {
   display: flex;
   justify-content: flex-end;

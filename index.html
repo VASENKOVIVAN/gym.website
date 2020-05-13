@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 button-log-nav">
                     <div class="button-log wow wobble">
-                        <a href="#responsee">Перезвоните мне</a>
+                        <a href="#responsee">Узнать больше</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@
                     </div>
                     <div class="col-md-10 col-5">
                         <div class="button-log wow wobble">
-                            <a href="#responsee">Перезвоните мне</a>
+                            <a href="#responsee">Узнать больше</a>
                         </div>
                     </div>
                 </div>
@@ -294,33 +294,37 @@
     <div id="info"></div>
     <section class="response">
         <div class="container">
-            <h1 id="responsee">Записаться на прием</h1>
+            <h1 id="responsee">Узнать больше</h1>
             <div class="row">
                 <div class="col-md-3"> </div>
                 <div class="col-md-6">
                     <!-- <form action="dbconnect.php" method="POST" id="form"> -->
+                    <!-- <form action="index-send.php" method="POST" id="form"> -->
                     <form action="index-send.php" method="POST" id="form">
                         <!-- <form action="mail.php" method="POST" id="form"> -->
                         <div class="response__form">
                             <div class="inp">
                                 <p>Ваше имя: </p>
-                                <p><input class="form-control" type="text" name="name" placeholder="Ольга Трусова"></p>
+                                <p><input style="text-transform: capitalize;" id="name" class="form-control" type="text"
+                                        name="name" placeholder="Ольга Трусова"></p>
                             </div>
                             <div class="inp">
                                 <p>E-mail: </p>
-                                <p> <input class="form-control" type="text" name="email" placeholder="name@example.com">
+                                <p> <input id="email" class="form-control" type="email" name="email"
+                                        placeholder="name@example.com">
                                 </p>
                             </div>
                             <div class="inp">
                                 <p>Телефон: </p>
                                 <p> <input id="phone" class="form-control" type="text" name="tel"
-                                        placeholder="+7 (985) 874-33-03">
+                                        placeholder="+7 (999) 999-99-99">
                                 </p>
                             </div>
                             <div class="form-group">
                                 <p>Сообщение: </p>
-                                <textarea class="form-control" type="textarea" id="exampleFormControlTextarea1" rows="4"
-                                    name="text" placeholder="Коментарий"></textarea>
+                                <textarea id="text" class="form-control" type="textarea"
+                                    id="exampleFormControlTextarea1" rows="4" name="text"
+                                    placeholder="Хотел бы подробнее узнать, уточнить.."></textarea>
                             </div>
                             <!-- <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -329,7 +333,7 @@
                                     данных</label>
                             </div> -->
                             <div class="hvr-wobble-bottom-div twobutt wow wobble">
-                                <input class="hvr-wobble-bottom" type="submit" value="Перезвоните мне">
+                                <input onclick="f1()" class="hvr-wobble-bottom" type="submit" value="Перезвоните мне">
                             </div>
                         </div>
                     </form>
@@ -399,21 +403,23 @@
         </div>
     </footer>
 
+    <!--=============  =============-->
+    <!--=============  =============-->
+    <!--=============  =============-->
+    <!--=============  =============-->
+    <!-- <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script> -->
 
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--=============  для маски=============-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#phone").mask("+7 (999) 99-99-999");
+            $("#phone").mask("+7 (999) 999-99-99");
         });
     </script>
 
-    <!--=============  =============-->
-    <!--=============  =============-->
-    <!--=============  =============-->
-    <!--=============  =============-->
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
-    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
@@ -422,7 +428,7 @@
 
 
 <!--=============  =============-->
-<script src="/js/jquery-3.4.0.min.js"></script>
+<!-- <script src="/js/jquery-3.4.0.min.js"></script> -->
 <script>
     // Отправка данных на сервер
     $('#form').trigger('reset');
@@ -437,8 +443,29 @@
                 processData: false,
                 data: new FormData(this),
             });
-            alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
-            $('#form').trigger('reset'); // очистка формы
+
+            var namebox;
+            namebox = document.getElementById("name").value;
+            var textbox;
+            textbox = document.getElementById("text").value;
+            var emailbox;
+            emailbox = document.getElementById("email").value;
+            var phonebox;
+            phonebox = document.getElementById("phone").value;
+
+            if (!namebox) {
+                alert('Вероятнее всего, Вы забыли ввести имя!');
+            }
+            else if (!textbox) {
+                alert('Вероятнее всего, Вы забыли ввести сообщение!');
+            }
+            else if (!emailbox && !phonebox) {
+                alert('Пожалуйста, введите Ваш номер либо почтовый адрес.\n\(Эта информация необходима нам для связи с Вами)');
+            }
+            else {
+                alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
+                $('#form').trigger('reset');
+            }
         });
     });
 </script>

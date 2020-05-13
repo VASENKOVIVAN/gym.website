@@ -27,12 +27,12 @@
                 <div class="navi">
                     <a href="index.html">Сайт Фитнес-клуба</a>
                     <a href="admin-main.html">Главная</a>
+                    <a href="all_request.php">Заявки с сайта</a>
                     <a href="admin-add-clients.html">Добавление клиентов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
                     <a href="#">Скоро</a>
                     <a href="#">Скоро</a>
-                    <a href="#">Скоро</a>
-                    <a href="/exit.php">ВЫЙТИ</a>
+                    <a href="/exit.php" style="font-weight: 900; font-size: 27px;">ВЫЙТИ</a>
                 </div>
             </div>
             <div class="col-md-9 main-text">
@@ -46,17 +46,20 @@
 
                         <div class="formfactor">
                             <p>Фамилия:</p>
-                            <input type="text" name="surname" placeholder="Васенков"></input>
+                            <input style="text-transform: capitalize;" type="text" name="surname"
+                                placeholder="Васенков"></input>
                         </div>
 
                         <div class="formfactor">
                             <p>Имя:</p>
-                            <input type="text" name="name" placeholder="Иван"></input>
+                            <input style="text-transform: capitalize;" type="text" name="name"
+                                placeholder="Иван"></input>
                         </div>
 
                         <div class="formfactor">
                             <p>Отчество:</p>
-                            <input type="text" name="patronymic" placeholder="Викторович"></input>
+                            <input style="text-transform: capitalize;" type="text" name="patronymic"
+                                placeholder="Викторович"></input>
                         </div>
                         <div>
 
@@ -68,7 +71,7 @@
 
                         <div class="formfactor">
                             <p>Телефон:</p>
-                            <input type="text" name="tel" placeholder="+7 (985) 874-33-03"></input>
+                            <input id="phone" type="text" name="tel" placeholder="+7 (985) 874-33-03"></input>
                         </div>
 
                         <div id="button">
@@ -108,12 +111,19 @@
     <!--============= 04. services-card =============-->
 
     <!--  -->
-
+    <!--=============  для маски=============-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#phone").mask("+7 (999) 999-99-99");
+        });
+    </script>
 </body>
 
 </html>
 <!-- =============  =============-->
-<script src="/js/jquery-3.4.0.min.js"></script>
+<!-- <script src="/js/jquery-3.4.0.min.js"></script> -->
 <script>
     // Отправка данных на сервер
     $('#form').trigger('reset');
@@ -133,3 +143,43 @@
         });
     });
 </script>
+<!-- <script>
+    // Отправка данных на сервер
+    $('#form').trigger('reset');
+    $(function () {
+        'use strict';
+        $('#form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'index-send.php',
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                data: new FormData(this),
+            });
+
+            var namebox;
+            namebox = document.getElementById("name").value;
+            var textbox;
+            textbox = document.getElementById("text").value;
+            var emailbox;
+            emailbox = document.getElementById("email").value;
+            var phonebox;
+            phonebox = document.getElementById("phone").value;
+
+            if (!namebox) {
+                alert('Вероятнее всего, Вы забыли ввести имя!');
+            }
+            else if (!textbox) {
+                alert('Вероятнее всего, Вы забыли ввести сообщение!');
+            }
+            else if (!emailbox && !phonebox) {
+                alert('Пожалуйста, введите Ваш номер либо почтовый адрес.\n\(Эта информация необходима нам для связи с Вами)');
+            }
+            else {
+                alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
+                $('#form').trigger('reset');
+            }
+        });
+    });
+</script> -->
