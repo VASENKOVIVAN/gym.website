@@ -113,3 +113,16 @@ footer div {
   line-height: 1;
   padding: 0;
 } */
+.button-log a {
+  background: #c4d114;
+  color: #fff;
+  width: 218px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  border: 2px solid #c4d114;
+  border-radius: 10px;
+}

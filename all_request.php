@@ -32,7 +32,8 @@
                     <a href="all_users.php">Таблица "Клиенты"</a>
                     <a href="#">Скоро</a>
                     <a href="#">Скоро</a>
-                    <a href="/exit.php" style="font-weight: 900; font-size: 27px;">ВЫЙТИ</a>
+                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px;" href="/exit.php">Выйти</a>
+                    <!-- <a href="/exit.php" style="font-weight: 900; font-size: 27px;">ВЫЙТИ</a> -->
                 </div>
             </div>
             <div class="col-md-9 main-text">

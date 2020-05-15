@@ -69,6 +69,25 @@ header a:hover {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  #time {
+    margin-right: 15px;
+  }
+
+  header p,
+  a {
+    color: #8a8a8a;
+    display: inline;
+    font-size: 0.775em;
+    font-weight: 500;
+    line-height: 2.8em;
+  }
+
+  .cent > div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {

@@ -117,137 +117,36 @@
 
     <section class="login">
         <div class="container">
-            <?php
-            if ($_COOKIE['user'] == '') :
-            ?>
-
-                <div class="row">
-                    <div class="col-12 col-md-6 get-panelad">
+            <div class="row">
+                <div class="col-12 col-md-3"></div>
+                <div class="col-12 col-md-6 get-panelad">
+                    <div>
                         <h3>Регистрация</h3>
-
+                    </div>
+                    <div>
                         <form action="/validation-form/check.php" method="POST">
                             <p>Логин</p>
-                            <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
+                            <input type="text" class="form-control" name="login" id="login" placeholder="Ivanov1999"><br>
 
                             <p>Имя</p>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Васенков Иван"><br>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Иван Иванов"><br>
 
                             <p>Пароль</p>
                             <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
 
-                            <input class="hvr-wobble-bottom" type="submit" value="Зарегистрироваться">
-
+                            <div class=" twobutt">
+                                <input class="" type="submit" value="Зарегистрироваться">
+                            </div>
                         </form>
                     </div>
-
-                    <!-- <div class="col-md-3"></div> -->
-                    <div class="col-12 col-md-6 get-panelad">
-                        <div>
-                            <h3>Вход в панель управления</h3>
-                        </div>
-                        <div>
-                            <form action="/validation-form/auth.php" method="POST">
-                                <div>
-                                    <p>Логин</p>
-                                    <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
-                                </div>
-
-                                <div>
-                                    <p>Пароль</p>
-                                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
-
-                                </div>
-
-                                <!-- <input class="hvr-wobble-bottom" type="submit" value="Авторизироваться"> -->
-
-                                <div class="hvr-wobble-bottom-div twobutt wow wobble">
-                                    <input class="hvr-wobble-bottom" type="submit" value="Авторизироваться">
-                                </div>
-
-                            </form>
-                        </div>
+                    <div>
+                        <p style="text-align: center">Если у Вас уже есть аккаунт, можете <a style="color: blue" href="login.php">ВОЙТИ</a> </p>
                     </div>
-                    <!-- <div class="col-md-3"></div> -->
                 </div>
-
-                <!-- ($user['name'] == 'admin') -->
-                <!-- $user['name'] -->
-            <?php else : ?>
-
-                <section>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
-                                <!-- <p style="text-align: center;">Имя пользователя: <b><?= $_COOKIE['user'] ?></b> </p> -->
-                                <p style="text-align: center;">Имя пользователя: <b><?= $_COOKIE['user'] ?></b> </p>
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
-                                <p style="text-align: center;">логин: <b><?= $_COOKIE['login'] ?></b> </p>
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
-                                <p style="text-align: center;">пароль: <b><?= $_COOKIE['pass'] ?></b> </p>
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
-                                <p style="text-align: center;">статус: <b><?= $_COOKIE['id_status'] ?></b> </p>
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
-                                <!-- <p style="margin-bottom:7px; text-align: center;">Чтобы зайти в панель управления нажмите:</p>
-                                <div style="margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
-                                    <a href="admin-main.html">Панель управления</a>
-                                </div> -->
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
-                                <p style="margin-bottom:7px; text-align: center;">Чтобы выйти нажмите</p>
-                                <div style=" margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
-                                    <a style="background: #d13a14;" href="/exit.php">Выйти</a>
-                                </div>
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <!-- <p>Привет <?= $_COOKIE['user'] ?>. Чтобы выйти нажмите <a href="/exit.php">здесь</a>.</p> -->
-            <?php endif; ?>
-
-
-
-            <div class="col-md-3"></div>
-
-        </div>
+                <div class="col-12 col-md-3"></div>
+            </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
 
 
     <!--============= 07. FOOTER =============-->
@@ -284,3 +183,26 @@
 </body>
 
 </html>
+<!-- <script>
+    var loginbox;
+    loginbox = document.getElementById("login").value;
+    var namebox;
+    namebox = document.getElementById("name").value;
+    var passbox;
+    passbox = document.getElementById("pass").value;
+
+    if (loginbox.length < 5) {
+        alert('Логин должен содержать более 5 символов!');
+    } else if (loginbox = "Admin") {
+        alert('Вы не можете зарегисрироваться с логином Admin!');
+    } else if (namebox.length < 5) {
+        alert('Имя должно содержать более 5 символов!');
+    } else if (namebox = "admin") {
+        alert('Вы не можете зарегисрироваться с именем admin!');
+    } else if (passbox.length < 5) {
+        alert('Имя должно содержать более 5 символов!');
+    } else {
+        alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
+        $('#form').trigger('reset');
+    }
+</script> -->
