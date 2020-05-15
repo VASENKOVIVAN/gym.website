@@ -25,15 +25,11 @@
                     <img style="width: 250px;" src="img/logo-admin.png" alt="Логотип фитнес-клуб">
                 </div>
                 <div class="navi">
-                    <a href="index.php">Сайт Фитнес-клуба</a>
+                    <a href="index.html">Сайт Фитнес-клуба</a>
                     <a href="admin-main.html">Главная</a>
                     <a href="all_request.php">Заявки с сайта</a>
                     <a href="admin-add-clients.html">Добавление клиентов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
-                    <a href="IN-admin-add-trainers.php">Добавление тренеров</a>
-                    <a href="all_trainers.php">Таблица "Тренеры"</a>
-                    <a href="admin-add-sports.html">Добавление видов спорта</a>
-                    <a href="all_sports.php">Таблица "Виды спорта"</a>
                     <a href="#">Скоро</a>
                     <a href="#">Скоро</a>
                     <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px;"
@@ -45,8 +41,25 @@
                 <div id="bluelinetop" class="text-top" style="background: #8dd0d3; height: 60px;">
                     <h3>Панель управления</h3>
                 </div>
-                <div style=" padding-top: 200px;padding-bottom: 200px;" class="texttt">
-                    <h1>Выберите один из пунктов <br> управления </h1>
+                <div class="admin-right">
+                    <h1>Добавить вид спорта</h1>
+
+                    <form action="admin-add-sports.php" method="POST" id="form" class="add-client-form">
+
+                        <div class="formfactor">
+                            <p>Название:</p>
+                            <input style="text-transform: capitalize;" type="text" name="sport"
+                                placeholder="Йога"></input>
+                        </div>
+
+                        <div id="button">
+                            <input type="submit" value="Добавить новый вид спорта">
+                        </div>
+
+                    </form>
+                </div>
+                <div style="height: 200px;">
+
                 </div>
                 <div class="admin-bottom-text">
                     <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого
@@ -70,11 +83,24 @@
             </div>
         </div>
     </section>
+
+
+    <!--============= 04. services-card =============-->
+
+    <!--  -->
+    <!--=============  для маски=============-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#phone").mask("+7 (999) 999-99-99");
+        });
+    </script>
 </body>
 
 </html>
 <!-- =============  =============-->
-<script src="/js/jquery-3.4.0.min.js"></script>
+<!-- <script src="/js/jquery-3.4.0.min.js"></script> -->
 <script>
     // Отправка данных на сервер
     $('#form').trigger('reset');
@@ -83,14 +109,54 @@
         $('#form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: 'clients.php',
+                url: 'admin-add-sports.php',
                 type: 'POST',
                 contentType: false,
                 processData: false,
                 data: new FormData(this),
             });
-            alert('Сообщение отправлено да');
+            alert('Новый клиент добавлен в Базу Данных\n\Данные высланы на почту: swayket@yandex.ru');
             $('#form').trigger('reset'); // очистка формы
         });
     });
 </script>
+<!-- <script>
+    // Отправка данных на сервер
+    $('#form').trigger('reset');
+    $(function () {
+        'use strict';
+        $('#form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'index-send.php',
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                data: new FormData(this),
+            });
+
+            var namebox;
+            namebox = document.getElementById("name").value;
+            var textbox;
+            textbox = document.getElementById("text").value;
+            var emailbox;
+            emailbox = document.getElementById("email").value;
+            var phonebox;
+            phonebox = document.getElementById("phone").value;
+
+            if (!namebox) {
+                alert('Вероятнее всего, Вы забыли ввести имя!');
+            }
+            else if (!textbox) {
+                alert('Вероятнее всего, Вы забыли ввести сообщение!');
+            }
+            else if (!emailbox && !phonebox) {
+                alert('Пожалуйста, введите Ваш номер либо почтовый адрес.\n\(Эта информация необходима нам для связи с Вами)');
+            }
+            else {
+                alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
+                $('#form').trigger('reset');
+            }
+        });
+    });
+</script> -->

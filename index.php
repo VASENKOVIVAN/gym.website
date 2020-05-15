@@ -9,9 +9,7 @@
     <link rel="icon" href="img/iconka.png">
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <!--Bootstrap css-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--custom css-->
@@ -54,14 +52,25 @@
 
                     </div>
                     <div>
-
-                        <a style="background: #8dd0d3;
+                        <?php
+                        if ($_COOKIE['user'] == '') :
+                        ?>
+                            <a style="background: #8dd0d3;
                         color: #fff;
                         width: 118px;
                         height: 30px;
                         padding: 7px 30px ; 
                         text-align: center;
                         border-radius: 10px;" href="login.php">Войти</a>
+                        <?php else : ?>
+                            <a style="background: #8dd0d3;
+                        color: #fff;
+                        width: 118px;
+                        height: 30px;
+                        padding: 7px 30px ; 
+                        text-align: center;
+                        border-radius: 10px;" href="login.php"><?= $_COOKIE['user'] ?></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -317,26 +326,22 @@
                         <div class="response__form">
                             <div class="inp">
                                 <p>Ваше имя: </p>
-                                <p><input style="text-transform: capitalize;" id="name" class="form-control" type="text"
-                                        name="name" placeholder="Ольга Трусова"></p>
+                                <p><input style="text-transform: capitalize;" id="name" class="form-control" type="text" name="name" placeholder="Ольга Трусова"></p>
                             </div>
                             <div class="inp">
                                 <p>E-mail: </p>
-                                <p> <input id="email" class="form-control" type="email" name="email"
-                                        placeholder="name@example.com">
+                                <p> <input id="email" class="form-control" type="email" name="email" placeholder="name@example.com">
                                 </p>
                             </div>
                             <div class="inp">
                                 <p>Телефон: </p>
-                                <p> <input id="phone" class="form-control" type="text" name="tel"
-                                        placeholder="+7 (999) 999-99-99">
+                                <p> <input id="phone" class="form-control" type="text" name="tel" placeholder="+7 (999) 999-99-99">
                                 </p>
                             </div>
+
                             <div class="form-group">
                                 <p>Сообщение: </p>
-                                <textarea id="text" class="form-control" type="textarea"
-                                    id="exampleFormControlTextarea1" rows="4" name="text"
-                                    placeholder="Хотел бы подробнее узнать, уточнить.."></textarea>
+                                <textarea id="text" class="form-control" type="textarea" id="exampleFormControlTextarea1" rows="4" name="text" placeholder="Хотел бы подробнее узнать, уточнить.."></textarea>
                             </div>
                             <!-- <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -390,9 +395,7 @@
     </section>
     <!--============= MAP =============-->
     <!-- https://yandex.ru/map-constructor/ -->
-    <iframe class="wow rotateInDownRight"
-        src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9c6a32390a9efe9e1edcecbb95039754069886735784eaa602e5dc6e12b40d9&amp;source=constructor"
-        width="100%" height="277" frameborder="0"></iframe>
+    <iframe class="wow rotateInDownRight" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9c6a32390a9efe9e1edcecbb95039754069886735784eaa602e5dc6e12b40d9&amp;source=constructor" width="100%" height="277" frameborder="0"></iframe>
     <!--============= 07. FOOTER =============-->
     <footer>
         <div class="container">
@@ -401,8 +404,7 @@
                         использования</b>
                     <br>
                     Copyright ©2020 -
-                    <a
-                        href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
+                    <a href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
                         Moscow</a> -
                     <a href="mailto:swayket@yandex.ru?subject=Отзыв о сайте math.website">
                         swayket@yandex.ru</a>
@@ -427,7 +429,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#phone").mask("+7 (999) 999-99-99");
         });
     </script>
@@ -444,9 +446,9 @@
 <script>
     // Отправка данных на сервер
     $('#form').trigger('reset');
-    $(function () {
+    $(function() {
         'use strict';
-        $('#form').on('submit', function (e) {
+        $('#form').on('submit', function(e) {
             e.preventDefault();
             $.ajax({
                 url: 'index-send.php',
@@ -467,14 +469,11 @@
 
             if (!namebox) {
                 alert('Вероятнее всего, Вы забыли ввести имя!');
-            }
-            else if (!textbox) {
+            } else if (!textbox) {
                 alert('Вероятнее всего, Вы забыли ввести сообщение!');
-            }
-            else if (!emailbox && !phonebox) {
+            } else if (!emailbox && !phonebox) {
                 alert('Пожалуйста, введите Ваш номер либо почтовый адрес.\n\(Эта информация необходима нам для связи с Вами)');
-            }
-            else {
+            } else {
                 alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
                 $('#form').trigger('reset');
             }
