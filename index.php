@@ -279,7 +279,7 @@
 
             left: 0;
             right: 0;
-            z-index: 2;
+            z-index: 99;
         }
 
         .box {
@@ -292,7 +292,12 @@
             position: relative;
             -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
             -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1); */
+            background: #fc0;
+            /* Цвет фона */
+            box-shadow: 0 0 900px rgba(0, 0, 0, 1);
+            /* Параметры тени */
+            padding: 10px;
         }
 
         .button {
@@ -405,7 +410,7 @@
             <h3>Добро пожаловать</h3>
             <p style="font-size: 20px">Оставаясь на нашем сайте вы соглашаетесь с политикой конфиденциальности</p>
             <p><a style="
-            background: #d89a14;
+            background: rgb(248, 66, 20);
             color: #fff;
             padding: 20px 5px;
             width: 218px;
@@ -706,12 +711,15 @@
                 <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого
                         использования</b>
                     <br>
-                    Copyright ©2020 -
+                    Ivan Vasenkov -
+
                     <a href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
-                        Moscow</a> -
+                        Moscow</a> ©2020 -
+
                     <a href="mailto:swayket@yandex.ru?subject=Отзыв о сайте math.website">
                         swayket@yandex.ru</a>
                     <br>
+
                     You are the only person who drinks <br> lemon tea in this house.</br>
                     <a style="font-size: 25px" href="privacy.php">Политика конфиденциальности</a>
                     <!-- <a href="login.php">Вход в панель управления</a> -->

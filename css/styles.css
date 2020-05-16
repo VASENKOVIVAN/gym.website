@@ -510,10 +510,6 @@ h4 {
   margin-bottom: 0.47em;
 }
 
-.reasons div {
-  /* border: 3px solid red; */
-}
-
 .icon-4 {
   font-size: 2em;
   background: #c4d114;
@@ -647,8 +643,7 @@ h4 {
 /*------------------------------------------------
 			   07. WHERE CSS
 ------------------------------------------------*/
-.where a {
-}
+
 /*------------------------------------------------
 			   08. FOOTER CSS
 ------------------------------------------------*/
@@ -694,9 +689,6 @@ footer a {
   }
 }
 @media (max-width: 575px) {
-  .menuuu {
-    /* display: none; */
-  }
 }
 @media (max-width: 575px) {
   #menu__toggle {

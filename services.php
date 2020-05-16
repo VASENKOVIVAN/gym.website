@@ -252,19 +252,21 @@
     <footer>
         <div class="container">
             <div class="row">
-                <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого использования</b>
+                <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого
+                        использования</b>
                     <br>
-                    Copyright ©2020 -
+                    Ivan Vasenkov -
 
                     <a href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
-                        Moscow</a> -
+                        Moscow</a> ©2020 -
 
                     <a href="mailto:swayket@yandex.ru?subject=Отзыв о сайте math.website">
                         swayket@yandex.ru</a>
                     <br>
 
                     You are the only person who drinks <br> lemon tea in this house.</br>
-
+                    <a style="font-size: 25px" href="privacy.php">Политика конфиденциальности</a>
+                    <!-- <a href="login.php">Вход в панель управления</a> -->
                 </p>
             </div>
         </div>
