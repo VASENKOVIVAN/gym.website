@@ -34,8 +34,8 @@
                     <a href="admin-add-subscriptions.html">Добавление абонементов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
                     <a href="all_trainers.php">Таблица "Тренеры"</a>
-                    <a href="all_sports.php" style="color: white;">Таблица "Виды спорта"</a>
-                    <a href="all_subscriptions.php">Таблица "Абонементы"</a>
+                    <a href="all_sports.php">Таблица "Виды спорта"</a>
+                    <a href="all_subscriptions.php" style="color: white;">Таблица "Абонементы"</a>
                     <!-- <a href="#">Скоро</a> -->
                     <!-- <a href="#">Скоро</a> -->
                     <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px; margin-top: 15px;" href="/exit.php">Выйти</a>
@@ -54,9 +54,9 @@
                     // start ВОТ ТУТ УДАЛЯЕМ СТРОКУ
                     if (isset($_GET['del_id'])) { //проверяем, есть ли переменная
                         //удаляем строку из таблицы
-                        $rows = mysqli_query($mysqli, "DELETE FROM `Sports` WHERE `id` = {$_GET['del_id']}");
+                        $rows = mysqli_query($mysqli, "DELETE FROM `Subscriptions` WHERE `id` = {$_GET['del_id']}");
                         if ($rows) {
-                            echo "<p style='background: rgb(248, 191, 152)' >Вид спорта был удален!</p>";
+                            echo "<p style='background: rgb(248, 191, 152)' >Абонемент был удален!</p>";
                         } else {
                             echo '<p>Произошла ошибка: ' . mysqli_error($mysqli) . '</p>';
                         }
@@ -65,13 +65,13 @@
 
                     ////////////////  start ВОТ ТУТ РЕДАКТИРУЕМ СТРОКУ
                     //Если переменная Name передана
-                    if (isset($_POST["sport"])) {
+                    if (isset($_POST["name"])) {
                         //Если это запрос на обновление, то обновляем
                         if (isset($_GET['red_id'])) {
-                            $rows = mysqli_query($mysqli, "UPDATE `Sports` SET `sport` = '{$_POST['sport']}' WHERE `id`={$_GET['red_id']}");
+                            $rows = mysqli_query($mysqli, "UPDATE `Subscriptions` SET `name` = '{$_POST['name']}',`amount_visits` = '{$_POST['amount_visits']}',`amount_days` = '{$_POST['amount_days']}',`time_start` = '{$_POST['time_start']}',`time_end` = '{$_POST['time_end']}',`price` = '{$_POST['price']}' WHERE `id`={$_GET['red_id']}");
                         } else {
                             //Иначе вставляем данные, подставляя их в запрос
-                            $rows = mysqli_query($mysqli, "INSERT INTO `Sports` (`sport`) VALUES ('{$_POST['sport']}')");
+                            $rows = mysqli_query($mysqli, "INSERT INTO `Subscriptions` (`name`, `amount_visits`, `amount_days`, `time_start`, `time_end`, `price`) VALUES ('{$_POST['name']}', '{$_POST['amount_visits']}', '{$_POST['amount_days']}', '{$_POST['time_start']}', '{$_POST['time_end']}', '{$_POST['price']}')");
                         }
 
                         //Если вставка прошла успешно
@@ -84,40 +84,70 @@
 
                     //Если передана переменная red_id, то надо обновлять данные. Для начала достанем их из БД
                     if (isset($_GET['red_id'])) {
-                        $rows = mysqli_query($mysqli, "SELECT `id`, `sport` FROM `Sports` WHERE `id`={$_GET['red_id']}");
+                        $rows = mysqli_query($mysqli, "SELECT `id`, `name`, `amount_visits`, `amount_days`, `time_start`, `time_end`, `price` FROM `Subscriptions` WHERE `id`={$_GET['red_id']}");
                         $product = mysqli_fetch_array($rows);
                     }
                     //////////////// end ВОТ ТУТ РЕДАКТИРУЕМ СТРОКУ
                     ?>
-                    <h4 style="margin-bottom: 0 ; ">Редактировать виды спорта:</h4>
+                    <h4 style="margin-bottom: 0 ; ">Редактировать данные абонемента:</h4>
                     <p>Нажмите кнопку "изменить", затем введите необходимые данные</p>
                     <form action="" method="post">
                         <table>
                             <tr>
                                 <td>Название:</td>
-                                <td><input style="width: 400px" type="text" name="sport" value="<?= isset($_GET['red_id']) ? $product['sport'] : ''; ?>"></td>
+                                <td><input style="width: 400px" type="text" name="name" value="<?= isset($_GET['red_id']) ? $product['name'] : ''; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Количество посещений:</td>
+                                <td><input style="width: 400px" type="text" name="amount_visits" value="<?= isset($_GET['red_id']) ? $product['amount_visits'] : ''; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Количество дней:</td>
+                                <td><input style="width: 400px" type="text" name="amount_days" value="<?= isset($_GET['red_id']) ? $product['amount_days'] : ''; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Время начала посещения:</td>
+                                <td><input style="width: 400px" type="text" name="time_start" value="<?= isset($_GET['red_id']) ? $product['time_start'] : ''; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Время конца посещения:</td>
+                                <td><input style="width: 400px" type="text" name="time_end" value="<?= isset($_GET['red_id']) ? $product['time_end'] : ''; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Цена:</td>
+                                <td><input style="width: 400px" type="text" name="price" value="<?= isset($_GET['red_id']) ? $product['price'] : ''; ?>"></td>
                             </tr>
                             <tr>
                                 <td colspan="2"><input style="width: 100%" type="submit" value="Обновить данные"></td>
                             </tr>
                         </table>
                     </form>
-                    <h1 style="margin-top: 30px">Список видов спорта</h1>
+                    <h1 style="margin-top: 30px">Список абонементов</h1>
                     <table border="2" style="border:2 #8a8a8a;">
                         <tr>
                             <td style="height:60px; width: 30px; background: rgb(215, 248, 152); text-align: center">id</td>
                             <td style="width: 170px; background: rgb(215, 248, 152); text-align: center">Название</td>
+                            <td style="width: 170px; background: rgb(215, 248, 152); text-align: center">Кол-во посещений</td>
+                            <td style="width: 170px; background: rgb(215, 248, 152); text-align: center">Кол-во дней</td>
+                            <td style="width: 250px; background: rgb(215, 248, 152); text-align: center">Время начала <br> посещения</td>
+                            <td style="width: 170px; background: rgb(215, 248, 152); text-align: center">Время конца посещения</td>
+                            <td style="width: 170px; background: rgb(215, 248, 152); text-align: center">Цена</td>
                             <td style="width: 70px; background: rgb(152, 218, 248); text-align: center">Изменить</td>
                             <td style="width: 70px; background: rgb(248, 191, 152); text-align: center">Удалить</td>
                         </tr>
 
                         <?php
-                        $rows = mysqli_query($mysqli, "SELECT id, sport FROM `Sports`");
+                        $rows = mysqli_query($mysqli, "SELECT id, name, amount_visits, amount_days, time_start, time_end, price FROM `Subscriptions`");
                         while ($stroka = mysqli_fetch_array($rows)) {
 
                             echo "<tr>";
                             echo "<td style='overflow-wrap: break-word; text-align: center'>" . $stroka['id'] . "</td>";
-                            echo "<td style='overflow-wrap: break-word'>" . $stroka['sport'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word; font-weight: 600'>" . $stroka['name'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word;  text-align: center'>" . $stroka['amount_visits'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word;  text-align: center'>" . $stroka['amount_days'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word; text-align: center'> " . $stroka['time_start'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word; text-align: center'>" . $stroka['time_end'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word;  text-align: center'>" . $stroka['price'] . "</td>";
                             echo "<td style='text-align: center'><a href='?red_id={$stroka['id']}'>Изменить</a></td>";
                             echo "<td style='text-align: center'><a href='?del_id={$stroka['id']}'>Удалить</a></td>";
                             // echo "<td><a href='edit_client.php?nomer=" . $stroka['nomer'] . "'>Ред</a></td>";
@@ -216,8 +246,8 @@
 // $row = mysqli_fetch_array($result);
 // do {
 // printf(
-// "<p>Пользователь: " . $row['surname'] . " " . $row['name'] . "</p> 
-//  <p>Отчество: " . $row['patronymic'] . "</p><p>Вид спорта: " . $row['sport'] . "</p><p>Телефон: " . $row['tel'] . "</p>---------<br/>"
+// "<p>Пользователь: " . $row['name'] . " " . $row['name'] . "</p> 
+//  <p>Отчество: " . $row['amount_days'] . "</p><p>Вид спорта: " . $row['time_start'] . "</p><p>Телефон: " . $row['time_end'] . "</p>---------<br/>"
 // );
 // } while ($row = mysqli_fetch_array($result));
 // 
@@ -238,15 +268,15 @@
 
         <?php
         // require 'connect.php';
-        // $rows = mysqli_query($mysqli, "SELECT surname, name, patronymic, sport, tel FROM `clients`");
+        // $rows = mysqli_query($mysqli, "SELECT name, name, amount_days, time_start, time_end FROM `clients`");
         // while ($stroka = mysqli_fetch_array($rows)) {
 
         //     echo "<tr>";
-        //     echo "<td>" . $stroka['surname'] . "</td>";
         //     echo "<td>" . $stroka['name'] . "</td>";
-        //     echo "<td>" . $stroka['patronymic'] . "</td>";
-        //     echo "<td>" . $stroka['sport'] . "</td>";
-        //     echo "<td>" . $stroka['tel'] . "</td>";
+        //     echo "<td>" . $stroka['name'] . "</td>";
+        //     echo "<td>" . $stroka['amount_days'] . "</td>";
+        //     echo "<td>" . $stroka['time_start'] . "</td>";
+        //     echo "<td>" . $stroka['time_end'] . "</td>";
         //     echo "<td><a href='edit.php?nomer=" . $stroka['nomer'] . "'>Редактировать</a></td>";
         //     echo "<td><a href='delete.php?nomer=" . $stroka['nomer'] . "'>Удалить</a></td>";
         //     echo "</tr>";

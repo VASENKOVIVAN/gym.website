@@ -25,15 +25,20 @@
                     <img style="width: 250px;" src="img/logo-admin.png" alt="Логотип фитнес-клуб">
                 </div>
                 <div class="navi">
-                    <a href="index.html">Сайт Фитнес-клуба</a>
+                    <a href="index.php">Сайт Фитнес-клуба</a>
                     <a href="admin-main.html">Главная</a>
                     <a href="all_request.php">Заявки с сайта</a>
-                    <a href="admin-add-clients.html">Добавление клиентов</a>
+                    <a href="IN-admin-add-clients.php" style="color: white;">Добавление клиентов</a>
+                    <a href="IN-admin-add-trainers.php">Добавление тренеров</a>
+                    <a href="admin-add-sports.html">Добавление видов спорта</a>
+                    <a href="admin-add-subscriptions.html">Добавление абонементов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
-                    <a href="#">Скоро</a>
-                    <a href="#">Скоро</a>
-                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px;"
-                        href="/exit.php">Выйти</a>
+                    <a href="all_trainers.php">Таблица "Тренеры"</a>
+                    <a href="all_sports.php">Таблица "Виды спорта"</a>
+                    <a href="all_subscriptions.php">Таблица "Абонементы"</a>
+                    <!-- <a href="#">Скоро</a> -->
+                    <!-- <a href="#">Скоро</a> -->
+                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px; margin-top: 15px;" href="/exit.php">Выйти</a>
                     <!-- <a href="/exit.php" style="font-weight: 900; font-size: 27px;">ВЫЙТИ</a> -->
                 </div>
             </div>
@@ -48,20 +53,17 @@
 
                         <div class="formfactor">
                             <p>Фамилия:</p>
-                            <input style="text-transform: capitalize;" type="text" name="surname"
-                                placeholder="Васенков"></input>
+                            <input style="text-transform: capitalize;" type="text" name="surname" placeholder="Васенков"></input>
                         </div>
 
                         <div class="formfactor">
                             <p>Имя:</p>
-                            <input style="text-transform: capitalize;" type="text" name="name"
-                                placeholder="Иван"></input>
+                            <input style="text-transform: capitalize;" type="text" name="name" placeholder="Иван"></input>
                         </div>
 
                         <div class="formfactor">
                             <p>Отчество:</p>
-                            <input style="text-transform: capitalize;" type="text" name="patronymic"
-                                placeholder="Викторович"></input>
+                            <input style="text-transform: capitalize;" type="text" name="patronymic" placeholder="Викторович"></input>
                         </div>
                         <div>
 
@@ -75,7 +77,40 @@
                             <p>Телефон:</p>
                             <input id="phone" type="text" name="tel" placeholder="+7 (985) 874-33-03"></input>
                         </div>
-
+                        <div>
+                            <p>Абонемент:</p>
+                            <?php
+                            /*Соединяеся с базой и делаем выборку из таблицы*/
+                            require 'connect.php';
+                            // Подключение к базе данных
+                            $mysqli = new mysqli($db_host, $db_user, $db_password, $db_base);
+                            $sql = "SELECT * FROM Subscriptions";
+                            $result_select = mysqli_query($mysqli, $sql);
+                            /*Выпадающий список*/
+                            echo "<select  name='ch_subscription' type='text' form='form'>";
+                            while ($object = mysqli_fetch_object($result_select)) {
+                                echo "<option value = '$object->name', $object->amount_visits', $object->amount_days', $object->time_start', $object->time_end', $object->price' > $object->name | Кол-во посещений: $object->amount_visits | Кол-во дней: $object->amount_days | (с $object->time_start до $object->time_end) | $object->price  </option>";
+                            }
+                            echo "</select>";
+                            ?>
+                        </div>
+                        <div>
+                            <p>Тренер:</p>
+                            <?php
+                            /*Соединяеся с базой и делаем выборку из таблицы*/
+                            require 'connect.php';
+                            // Подключение к базе данных
+                            $mysqli = new mysqli($db_host, $db_user, $db_password, $db_base);
+                            $sql = "SELECT * FROM Trainers";
+                            $result_select = mysqli_query($mysqli, $sql);
+                            /*Выпадающий список*/
+                            echo "<select  name='ch_trainer' type='text' form='form'>";
+                            while ($object = mysqli_fetch_object($result_select)) {
+                                echo "<option value = '$object->surname','$object->name','$object->patronymic','$object->sport','$object->tel' >  $object->surname $object->name $object->patronymic - ($object->sport) $object->tel  </option>";
+                            }
+                            echo "</select>";
+                            ?>
+                        </div>
                         <div id="button">
                             <input type="submit" value="Добавить нового клиента">
                         </div>
@@ -89,8 +124,7 @@
                         <br>
                         Ivan Vasenkov -
 
-                        <a
-                            href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
+                        <a href=" https://yandex.ru/maps/213/moscow/search/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0/?ll=37.688580%2C55.713767&sll=30.373136%2C60.006291&sspn=0.034161%2C0.010723&z=10.32">
                             Moscow</a> ©2020 -
 
                         <a href="mailto:swayket@yandex.ru?subject=Отзыв о сайте math.website">
@@ -114,7 +148,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#phone").mask("+7 (999) 999-99-99");
         });
     </script>
@@ -126,9 +160,9 @@
 <script>
     // Отправка данных на сервер
     $('#form').trigger('reset');
-    $(function () {
+    $(function() {
         'use strict';
-        $('#form').on('submit', function (e) {
+        $('#form').on('submit', function(e) {
             e.preventDefault();
             $.ajax({
                 url: 'admin-add-clients.php',

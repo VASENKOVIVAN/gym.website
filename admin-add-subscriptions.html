@@ -30,8 +30,8 @@
                     <a href="all_request.php">Заявки с сайта</a>
                     <a href="IN-admin-add-clients.php">Добавление клиентов</a>
                     <a href="IN-admin-add-trainers.php">Добавление тренеров</a>
-                    <a href="admin-add-sports.html" style="color: white;">Добавление видов спорта</a>
-                    <a href="admin-add-subscriptions.html">Добавление абонементов</a>
+                    <a href="admin-add-sports.html">Добавление видов спорта</a>
+                    <a href="admin-add-subscriptions.html" style="color: white;">Добавление абонементов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
                     <a href="all_trainers.php">Таблица "Тренеры"</a>
                     <a href="all_sports.php">Таблица "Виды спорта"</a>
@@ -48,24 +48,46 @@
                     <h3>Панель управления</h3>
                 </div>
                 <div class="admin-right">
-                    <h1>Добавить вид спорта</h1>
+                    <h1>Добавить абонемент</h1>
 
-                    <form action="admin-add-sports.php" method="POST" id="form" class="add-client-form">
+                    <form action="admin-add-clients.php" method="POST" id="form" class="add-client-form">
 
                         <div class="formfactor">
                             <p>Название:</p>
-                            <input style="text-transform: capitalize;" type="text" name="sport"
-                                placeholder="Йога"></input>
+                            <input style="text-transform: capitalize;" type="text" name="name"
+                                placeholder="Классический"></input>
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Количество посещений:</p>
+                            <input type="text" name="amount_visits" placeholder="12"></input>
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Количество дней:</p>
+                            <input type="text" name="amount_days" placeholder="30"></input>
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Время начала посещения:</p>
+                            <input type="text" name="time_start" placeholder="10:00">
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Время конца посещения:</p>
+                            <input type="text" name="time_end" placeholder="21:00">
+                        </div>
+
+                        <div class="formfactor">
+                            <p>Цена:</p>
+                            <input type="text" name="price" placeholder="1500р."></input>
                         </div>
 
                         <div id="button">
-                            <input type="submit" value="Добавить новый вид спорта">
+                            <input type="submit" value="Добавить новый абонемент">
                         </div>
 
                     </form>
-                </div>
-                <div style="height: 200px;">
-
                 </div>
                 <div class="admin-bottom-text">
                     <p> <b> Сайт разработан в рамках курсового проекта и не предназначен для коммерческого
@@ -115,13 +137,13 @@
         $('#form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: 'admin-add-sports.php',
+                url: 'admin-add-subscriptions.php',
                 type: 'POST',
                 contentType: false,
                 processData: false,
                 data: new FormData(this),
             });
-            alert('Новый клиент добавлен в Базу Данных\n\Данные высланы на почту: swayket@yandex.ru');
+            alert('Новый абонемент добавлен в Базу Данных\n\Данные высланы на почту: swayket@yandex.ru');
             $('#form').trigger('reset'); // очистка формы
         });
     });

@@ -28,12 +28,17 @@
                     <a href="index.php">Сайт Фитнес-клуба</a>
                     <a href="admin-main.html">Главная</a>
                     <a href="all_request.php">Заявки с сайта</a>
-                    <a href="admin-add-clients.html">Добавление клиентов</a>
+                    <a href="IN-admin-add-clients.php">Добавление клиентов</a>
+                    <a href="IN-admin-add-trainers.php">Добавление тренеров</a>
+                    <a href="admin-add-sports.html">Добавление видов спорта</a>
+                    <a href="admin-add-subscriptions.html">Добавление абонементов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
-                    <a href="#">Скоро</a>
-                    <a href="#">Скоро</a>
-                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px;" href="/exit.php">Выйти</a>
-
+                    <a href="all_trainers.php" style="color: white;">Таблица "Тренеры"</a>
+                    <a href="all_sports.php">Таблица "Виды спорта"</a>
+                    <a href="all_subscriptions.php">Таблица "Абонементы"</a>
+                    <!-- <a href="#">Скоро</a> -->
+                    <!-- <a href="#">Скоро</a> -->
+                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px; margin-top: 15px;" href="/exit.php">Выйти</a>
                     <!-- <a href="/exit.php" style="font-weight: 900; font-size: 27px;">ВЫЙТИ</a> -->
                 </div>
             </div>
@@ -100,10 +105,36 @@
                                 <td>Отчество:</td>
                                 <td><input style="width: 400px" type="text" name="patronymic" value="<?= isset($_GET['red_id']) ? $product['patronymic'] : ''; ?>"></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>Вид спорта:</td>
                                 <td><input style="width: 400px" type="text" name="sport" value="<?= isset($_GET['red_id']) ? $product['sport'] : ''; ?>"></td>
+                            </tr> -->
+                            <tr>
+                                <td>Вид спорта:</td>
+                                <td>
+                                    <select style="width: 400px" type="text" name="sport">
+                                        <option>
+                                            <?= isset($_GET['red_id']) ? $product['sport'] : ''; ?>
+                                        </option>
+                                        <?php
+                                        /*Соединяеся с базой и делаем выборку из таблицы*/
+                                        require 'connect.php';
+                                        // Подключение к базе данных
+                                        $mysqli = new mysqli($db_host, $db_user, $db_password, $db_base);
+                                        $sql = "SELECT * FROM Trainers";
+                                        $result_select = mysqli_query($mysqli, $sql);
+                                        /*Выпадающий список*/
+                                        while ($object = mysqli_fetch_object($result_select)) {
+                                            echo "<option value = '$object->sport' > $object->sport </option>";
+                                        }
+                                        echo "</select>";
+                                        ?>
+                                    </select>
+                                </td>
                             </tr>
+
+
+
                             <tr>
                                 <td>Телефон:</td>
                                 <td><input style="width: 400px" id="phone" type="text" name="tel" value="<?= isset($_GET['red_id']) ? $product['tel'] : ''; ?>"></td>
@@ -113,7 +144,7 @@
                             </tr>
                         </table>
                     </form>
-                    <h1 style="margin-top: 30px">Список клиентов</h1>
+                    <h1 style="margin-top: 30px">Список тренеров</h1>
                     <table border="2" style="border:2 #8a8a8a;">
                         <tr>
                             <td style="height:60px; width: 30px; background: rgb(215, 248, 152); text-align: center">id</td>

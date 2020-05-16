@@ -27,12 +27,18 @@
                 <div class="navi">
                     <a href="index.php">Сайт Фитнес-клуба</a>
                     <a href="admin-main.html">Главная</a>
-                    <a href="all_request.php">Заявки с сайта</a>
-                    <a href="admin-add-clients.html">Добавление клиентов</a>
+                    <a href="all_request.php" style="color: white;">Заявки с сайта</a>
+                    <a href="IN-admin-add-clients.php">Добавление клиентов</a>
+                    <a href="IN-admin-add-trainers.php">Добавление тренеров</a>
+                    <a href="admin-add-sports.html">Добавление видов спорта</a>
+                    <a href="admin-add-subscriptions.html">Добавление абонементов</a>
                     <a href="all_users.php">Таблица "Клиенты"</a>
-                    <a href="#">Скоро</a>
-                    <a href="#">Скоро</a>
-                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px;" href="/exit.php">Выйти</a>
+                    <a href="all_trainers.php">Таблица "Тренеры"</a>
+                    <a href="all_sports.php">Таблица "Виды спорта"</a>
+                    <a href="all_subscriptions.php">Таблица "Абонементы"</a>
+                    <!-- <a href="#">Скоро</a> -->
+                    <!-- <a href="#">Скоро</a> -->
+                    <a style="background: #d13a14; color: #fff;width: 80%;display: block;text-align: center;font-weight: 600;font-size: 1.1em;text-decoration: none;border: 2px solid #c4d114;border-radius: 10px; margin-top: 15px;" href="/exit.php">Выйти</a>
                     <!-- <a href="/exit.php" style="font-weight: 900; font-size: 27px;">ВЫЙТИ</a> -->
                 </div>
             </div>
