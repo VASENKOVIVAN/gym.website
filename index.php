@@ -283,7 +283,8 @@
         }
 
         .box {
-            background-color: whitesmoke;
+            background-color: #bebebe;
+            border-radius: 180px;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
@@ -397,7 +398,10 @@
     </section>
     <div class="row pop-up">
         <div style="width: 700px; height: 300px" class="box small-6 large-centered">
-            <a href="#" class="button">&#10006;</a>
+            <a style="margin: 0 auto;
+            color: rgb(248, 66, 20);
+            margin-bottom: 23px;
+            font-size: 40px" href="#" class="close-button">&#10006;</a>
             <h3>Добро пожаловать</h3>
             <p style="font-size: 20px">Оставаясь на нашем сайте вы соглашаетесь с политикой конфиденциальности</p>
             <p><a style="
