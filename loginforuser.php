@@ -71,10 +71,10 @@
 
                     <ul class="menu__box">
                         <li><a class="menu__item" href="index.php">Главная</a></li>
-                        <li><a class="menu__item" href="services.html">Услуги</a></li>
-                        <li><a class="menu__item" href="trainers.html">Тренеры</a></li>
-                        <li><a class="menu__item" href="subscription.html">Абонементы</a></li>
-                        <li><a class="menu__item" href="contacts.html">Контакты</a></li>
+                        <li><a class="menu__item" href="services.php">Услуги</a></li>
+                        <li><a class="menu__item" href="trainers.php">Тренеры</a></li>
+                        <li><a class="menu__item" href="subscription.php">Абонементы</a></li>
+                        <li><a class="menu__item" href="contacts.php">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 ">
@@ -84,15 +84,15 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <nav class="menuuu">
                         <a href="index.php">Главная</a>
-                        <a href="services.html">Услуги</a>
-                        <a href="trainers.html">Тренеры</a>
-                        <a href="subscription.html">Абонементы</a>
-                        <a href="contacts.html">Контакты</a>
+                        <a href="services.php">Услуги</a>
+                        <a href="trainers.php">Тренеры</a>
+                        <a href="subscription.php">Абонементы</a>
+                        <a href="contacts.php">Контакты</a>
                     </nav>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 button-log-nav">
                     <div class="button-log wow wobble">
-                        <a href="index.html#responsee">Узнать больше</a>
+                        <a href="index.php#responsee">Узнать больше</a>
                     </div>
                 </div>
             </div>

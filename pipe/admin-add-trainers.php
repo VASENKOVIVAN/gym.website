@@ -23,7 +23,7 @@
 //     $result = $mysqli->query("INSERT INTO " . $db_table . " (surname,name,patronymic,address,tel) VALUES ('$surname','$name','$patronymic','$address','$tel')");
 
 //     if ($result == true) {
-//         echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.html'>Вернуться на сайт</a> </button>";
+//         echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.php'>Вернуться на сайт</a> </button>";
 //     } else {
 //         echo "Упс, что то пошло не так ;(";
 //     }
@@ -157,7 +157,7 @@ try {
         $result = $mysqli->query("INSERT INTO " . $db_table . " (surname,name,patronymic,sport,tel) VALUES ('$surname','$name','$patronymic','$sport','$tel')");
 
         if ($result == true) {
-            echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.html'>Вернуться на сайт</a> </button>";
+            echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.php'>Вернуться на сайт</a> </button>";
         } else {
             echo "Упс, что то пошло не так ;(";
         }

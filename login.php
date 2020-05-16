@@ -119,10 +119,10 @@
 
                     <ul class="menu__box">
                         <li><a class="menu__item" href="index.php">Главная</a></li>
-                        <li><a class="menu__item" href="services.php">Услуги</a></li>
-                        <li><a class="menu__item" href="trainers.php">Тренеры</a></li>
-                        <li><a class="menu__item" href="subscription.php">Абонементы</a></li>
-                        <li><a class="menu__item" href="contacts.php">Контакты</a></li>
+                        <li><a class="menu__item" href="services.html">Услуги</a></li>
+                        <li><a class="menu__item" href="trainers.html">Тренеры</a></li>
+                        <li><a class="menu__item" href="subscription.html">Абонементы</a></li>
+                        <li><a class="menu__item" href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 ">
@@ -132,15 +132,15 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <nav class="menuuu">
                         <a href="index.php">Главная</a>
-                        <a href="services.php">Услуги</a>
-                        <a href="trainers.php">Тренеры</a>
-                        <a href="subscription.php">Абонементы</a>
-                        <a href="contacts.php">Контакты</a>
+                        <a href="services.html">Услуги</a>
+                        <a href="trainers.html">Тренеры</a>
+                        <a href="subscription.html">Абонементы</a>
+                        <a href="contacts.html">Контакты</a>
                     </nav>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 button-log-nav">
                     <div class="button-log wow wobble">
-                        <a href="index.php#responsee">Узнать больше</a>
+                        <a href="index.html#responsee">Узнать больше</a>
                     </div>
                 </div>
             </div>
@@ -151,12 +151,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h3>Регистрация</h3>
+                    <h3>Вход в аккаунт</h3>
                 </div>
                 <div class="col-6 arrow">
                     <a href="index.php">Главная </a>
                     <i class="fas fa-arrow-right"></i>
-                    <p>Регистрация</p>
+                    <p>Вход</p>
                 </div>
             </div>
         </div>
@@ -165,13 +165,14 @@
 
     <section class="login">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-3"></div>
-                <div class="col-12 col-md-6 get-panelad">
-                    <div>
+            <?php
+            if ($_COOKIE['user'] == '') :
+            ?>
+
+                <div class="row">
+                    <!-- <div class="col-12 col-md-5 get-panelad">
                         <h3>Регистрация</h3>
-                    </div>
-                    <div>
+
                         <form action="/validation-form/check.php" method="POST">
                             <p>Логин</p>
                             <input type="text" class="form-control" name="login" id="login" placeholder="Ivanov1999"><br>
@@ -187,14 +188,136 @@
                             </div>
                         </form>
                     </div>
-                    <div>
-                        <p style="text-align: center">Если у Вас уже есть аккаунт, можете <a style="color: blue" href="login.php">ВОЙТИ</a> </p>
+                    <div class="col-md-2"></div> -->
+                    <div class="col-md-3"></div>
+                    <div class="col-12 col-md-6 get-panelad">
+                        <div>
+                            <h3>Вход</h3>
+                        </div>
+                        <div>
+                            <form action="/validation-form/auth.php" method="POST">
+                                <div>
+                                    <p>Логин</p>
+                                    <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
+                                </div>
+
+                                <div>
+                                    <p>Пароль</p>
+                                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
+                                </div>
+
+                                <div class=" twobutt ">
+                                    <input class="" type="submit" value="Войти">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div>
+                            <p style="text-align: center">Если у Вас еще нет аккаунта, можете <a style="color: blue" href="registration.php">ЗАРЕГИСТРИРОВАТЬСЯ</a> </p>
+                        </div>
                     </div>
+                    <div class="col-md-3"></div>
                 </div>
-                <div class="col-12 col-md-3"></div>
-            </div>
+
+            <?php
+            elseif ($_COOKIE['user'] == 'admin') :
+            ?>
+
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
+                                <p style="text-align: center;">Имя пользователя: <b><?= $_COOKIE['user'] ?></b> </p>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <p style="margin-bottom:7px; text-align: center;">Чтобы зайти в панель управления нажмите:</p>
+                                <div style="margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
+                                    <a href="admin-main.html">Панель управления</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <p style="margin-bottom:7px; text-align: center;">Чтобы выйти нажмите</p>
+                                <div style=" margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
+                                    <a style="background: #d13a14;" href="/exit.php">Выйти</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </section>
+
+            <?php else : ?>
+
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
+                                <p style="text-align: center;">Ваше имя: <b><?= $_COOKIE['user'] ?></b></p>
+                                <p style="text-align: center;">Ваш логин: <b><?= $_COOKIE['login'] ?></b> </p>
+                                <p style="text-align: center;">Ваш пароль: <b><?= $_COOKIE['pass'] ?></b> </p>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-md-3"></div>
+                            <div style="margin-bottom: 30px; margin-top: 30px" class="col-md-6">
+                                <p style="text-align: center;">статус: <b><?= $_COOKIE['id_status'] ?></b> </p>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div> -->
+                        <!-- <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <p style="margin-bottom:7px; text-align: center;">Чтобы зайти в панель управления нажмите:</p>
+                                <div style="margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
+                                    <a href="admin-main.html">Панель управления</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <p style="margin-bottom:7px; text-align: center;">Чтобы выйти нажмите</p>
+                                <div style=" margin-bottom:30px; justify-content: center; display: flex; align-items:center; text-align: center;" class="button-log">
+                                    <a style="background: #d13a14;" href="/exit.php">Выйти</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- <p>Привет <?= $_COOKIE['user'] ?>. Чтобы выйти нажмите <a href="/exit.php">здесь</a>.</p> -->
+            <?php endif; ?>
+
+
+
+            <div class="col-md-3"></div>
+
+        </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
 
 
     <!--============= 07. FOOTER =============-->
@@ -231,26 +354,3 @@
 </body>
 
 </html>
-<!-- <script>
-    var loginbox;
-    loginbox = document.getElementById("login").value;
-    var namebox;
-    namebox = document.getElementById("name").value;
-    var passbox;
-    passbox = document.getElementById("pass").value;
-
-    if (loginbox.length < 5) {
-        alert('Логин должен содержать более 5 символов!');
-    } else if (loginbox = "Admin") {
-        alert('Вы не можете зарегисрироваться с логином Admin!');
-    } else if (namebox.length < 5) {
-        alert('Имя должно содержать более 5 символов!');
-    } else if (namebox = "admin") {
-        alert('Вы не можете зарегисрироваться с именем admin!');
-    } else if (passbox.length < 5) {
-        alert('Имя должно содержать более 5 символов!');
-    } else {
-        alert('Спасибо!\n\Ваша заявка отправлена.\n\Вам перезвонят в самое ближайшее время.');
-        $('#form').trigger('reset');
-    }
-</script> -->

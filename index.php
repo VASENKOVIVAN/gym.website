@@ -6,6 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--title-->
     <title>Фитнес-клуб</title>
+
+
+
+    <!-- Get user ip -->
+    <script type="text/javascript" src="https://www.l2.io/ip.js?var=userip"></script>
+    <!-- /Get user ip -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(62862643, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            params: {
+                'ip': userip
+            }
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/62862643" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
+
+    <!-- <script type="text/javascript">
+        var yaParams = {
+            ip: "<? echo $_SERVER['REMOTE_ADDR']; ?>"
+        };
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(62862643, "init", {
+            params: window.yaParams,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/62862643" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript> -->
+    <!-- /Yandex.Metrika counter -->
     <link rel="icon" href="img/iconka.png">
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
@@ -24,8 +83,230 @@
     <script src="https://kit.fontawesome.com/0f13d382a3.js" crossorigin="anonymous"></script>
     <!-- библиотека jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <style>
+    <script>
+        $(function() {
+            $('.pop-up').hide();
+            $('.pop-up').fadeIn(1000);
+            $('.close-button').click(function(e) {
 
+                $('.pop-up').fadeOut(700);
+                $('#overlay').removeClass('blur-in');
+                $('#overlay').addClass('blur-out');
+                e.stopPropagation();
+            });
+        });
+        document.cookie = 'visited; path=/';
+    </script>
+    <style>
+        .cover {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .blur-in {
+            -webkit-animation: blur 2s forwards;
+            -moz-animation: blur 2s forwards;
+            -o-animation: blur 2s forwards;
+            animation: blur 2s forwards;
+        }
+
+        .blur-out {
+            -webkit-animation: blur-out 2s forwards;
+            -moz-animation: blur-out 2s forwards;
+            -o-animation: blur-out 2s forwards;
+            animation: blur-out 2s forwards;
+        }
+
+        @-webkit-keyframes blur {
+            0% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+
+            100% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+        }
+
+        @-moz-keyframes blur {
+            0% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+
+            100% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+        }
+
+        @-o-keyframes blur {
+            0% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+
+            100% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+        }
+
+        @keyframes blur {
+            0% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+
+            100% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+        }
+
+        @-webkit-keyframes blur-out {
+            0% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+
+            100% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+        }
+
+        @-moz-keyframes blur-out {
+            0% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+
+            100% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+        }
+
+        @-o-keyframes blur-out {
+            0% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+
+            100% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes blur-out {
+            0% {
+                -webkit-filter: blur(4px);
+                -moz-filter: blur(4px);
+                -o-filter: blur(4px);
+                -ms-filter: blur(4px);
+                filter: blur(4px);
+            }
+
+            100% {
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+            }
+        }
+
+        .content {
+            width: 650px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+
+        span {
+            color: dimgray;
+        }
+
+        .pop-up {
+            position: fixed;
+            margin: 5% auto;
+
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        .box {
+            background-color: whitesmoke;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -1%;
+            position: relative;
+            -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            margin: 0 auto;
+            color: rgb(248, 66, 20);
+            margin-bottom: 23px;
+            font-size: 40px
+        }
+
+        /* .button:hover {
+            background-color: #7CCF29;
+            -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+        } */
     </style>
 </head>
 
@@ -86,11 +367,11 @@
                         <span></span>
                     </label>
                     <ul class="menu__box">
-                        <li><a class="menu__item" href="index.html">Главная</a></li>
-                        <li><a class="menu__item" href="services.html">Услуги</a></li>
-                        <li><a class="menu__item" href="trainers.html">Тренеры</a></li>
-                        <li><a class="menu__item" href="subscription.html">Абонементы</a></li>
-                        <li><a class="menu__item" href="contacts.html">Контакты</a></li>
+                        <li><a class="menu__item" href="index.php">Главная</a></li>
+                        <li><a class="menu__item" href="services.php">Услуги</a></li>
+                        <li><a class="menu__item" href="trainers.php">Тренеры</a></li>
+                        <li><a class="menu__item" href="subscription.php">Абонементы</a></li>
+                        <li><a class="menu__item" href="contacts.php">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 ">
@@ -99,11 +380,11 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <nav class="menuuu">
-                        <a style="color: #c4d114;" class="active" href="index.html">Главная</a>
-                        <a href="services.html">Услуги</a>
-                        <a href="trainers.html">Тренеры</a>
-                        <a href="subscription.html">Абонементы</a>
-                        <a href="contacts.html">Контакты</a>
+                        <a style="color: #c4d114;" class="active" href="index.php">Главная</a>
+                        <a href="services.php">Услуги</a>
+                        <a href="trainers.php">Тренеры</a>
+                        <a href="subscription.php">Абонементы</a>
+                        <a href="contacts.php">Контакты</a>
                     </nav>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-12 button-log-nav">
@@ -114,6 +395,24 @@
             </div>
         </div>
     </section>
+    <div class="row pop-up">
+        <div style="width: 700px; height: 300px" class="box small-6 large-centered">
+            <a href="#" class="button">&#10006;</a>
+            <h3>Добро пожаловать</h3>
+            <p style="font-size: 20px">Оставаясь на нашем сайте вы соглашаетесь с политикой конфиденциальности</p>
+            <p><a style="
+            background: #d89a14;
+            color: #fff;
+            padding: 20px 5px;
+            width: 218px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 10px;" href="privacy.php">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a></p>
+        </div>
+    </div>
     <!--============= 01.5 CAROUSEL =============-->
     <section class="car">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -410,7 +709,7 @@
                         swayket@yandex.ru</a>
                     <br>
                     You are the only person who drinks <br> lemon tea in this house.</br>
-                    <!-- <a href="admin-main.html">Панель управления</a> -->
+                    <a style="font-size: 25px" href="privacy.php">Политика конфиденциальности</a>
                     <!-- <a href="login.php">Вход в панель управления</a> -->
                 </p>
             </div>

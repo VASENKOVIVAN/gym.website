@@ -1,49 +1,55 @@
 <?php
-// Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-// Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-// Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-// if (
-//     isset($_POST['surname']) &&
-//     isset($_POST['name']) &&
-//     isset($_POST['patronymic']) &&
-//     isset($_POST['address']) &&
-//     isset($_POST['tel'])
-// ) {
-
-//     // Параметры для подключения
-//     $db_host = "localhost";
-//     $db_user = " "; // Логин БД
-//     $db_password = " "; // Пароль БД
-//     $db_base = 'id13203941_customers'; // Имя БД
-//     $db_table = "clients"; // Имя Таблицы БД
-
-//     // Подключение к базе данных
-//     $mysqli = new mysqli($db_host, $db_user, $db_password, $db_base);
-
-//     $result = $mysqli->query("INSERT INTO " . $db_table . " (surname,name,patronymic,address,tel) VALUES ('$surname','$name','$patronymic','$address','$tel')");
-
-//     if ($result == true) {
-//         echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.php'>Вернуться на сайт</a> </button>";
-//     } else {
-//         echo "Упс, что то пошло не так ;(";
-//     }
-// }
-// Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-//  Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-// Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-
-
 // Файлы phpmailer ВСЕ ЧТО НИЖЕ, НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ ПОЧТУ
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
-
-
-
 // Переменные, которые отправляет пользователь
 
-$sport = $_POST['sport'];
-$sport = mb_convert_case($sport, MB_CASE_TITLE, 'UTF-8'); // делаем заглавную букву каждого слова
+/**
+ * проверяем, что функция mb_ucfirst не объявлена
+ * и включено расширение mbstring (Multibyte String Functions)
+ */
+if (!function_exists('mb_ucfirst') && extension_loaded('mbstring')) {
+    /**
+     * mb_ucfirst - преобразует первый символ в верхний регистр
+     * @param string $str - строка
+     * @param string $encoding - кодировка, по-умолчанию UTF-8
+     * @return string
+     */
+    function mb_ucfirst($str, $encoding = 'UTF-8')
+    {
+        $str = mb_ereg_replace('^[\ ]+', '', $str);
+        $str = mb_strtoupper(mb_substr($str, 0, 1, $encoding), $encoding) .
+            mb_substr($str, 1, mb_strlen($str), $encoding);
+        return $str;
+    }
+}
+
+$name = $_POST['name'];
+$name = mb_convert_case($name, MB_CASE_TITLE, 'UTF-8'); // делаем заглавную букву каждого слова
+
+$email = $_POST['email'];
+$tel = $_POST['tel'];
+
+// делаем заглавную букву
+$text = $_POST['text'];
+$first = mb_substr($text, 0, 1, 'UTF-8'); //первая буква
+$last = mb_substr($text, 1); //все кроме первой буквы
+$first = mb_strtoupper($first, 'UTF-8');
+$last = mb_strtolower($last, 'UTF-8');
+$text = $first . $last;
+$text = "$text";
+
+
+if (mb_strlen($name) < 1) {
+    exit();
+}
+if (mb_strlen($text) < 1) {
+    exit();
+}
+if (mb_strlen($email) < 1 and mb_strlen($tel) < 3) {
+    exit();
+}
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
@@ -64,11 +70,12 @@ try {
     // Само письмо
     $mail->isHTML(true);
 
-    $mail->Subject = 'В БД добавлен новый вид спорта';
-    $mail->Body    = "
-        <h1>Новый вид спорта добавлен в базу данных БД: </h1><br>
-       
-        <b>Название: </b> $sport";
+    $mail->Subject = 'Новая заявка (перезвонить)';
+    $mail->Body    = "<b>Имя:</b> $name <br>
+        <b>Почта:</b> $email <br>
+        <b>Телефон:</b> $tel <br>
+        <br>
+        <b>Сообщение:</b><br>$text";
 
 
     // Проверяем отравленность сообщения
@@ -82,10 +89,7 @@ try {
     // Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
     // Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
     // Файлы phpmailer ВСЕ ЧТО НИЖЕ, до следующего коммента НУЖНО ДЛЯ ТОГО ЧТО БЫ ПУШИТЬ БДБДБДБДБДБДДБДБ
-
-    if (isset($_POST['sport'])) {
-
-
+    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['text'])) {
 
         // Параметры для подключения
         // $db_host = "localhost";
@@ -96,15 +100,14 @@ try {
 
         // Параметры для подключения берем из файла
         require 'connect.php';
-
-        $db_table = "Sports"; // Имя Таблицы БД
+        $db_table = "Request"; // Имя Таблицы БД
         // Подключение к базе данных
         $mysqli = new mysqli($db_host, $db_user, $db_password, $db_base);
 
-        $result = $mysqli->query("INSERT INTO " . $db_table . " (sport) VALUES ('$sport')");
+        $result = $mysqli->query("INSERT INTO " . $db_table . " (name,email,tel,text) VALUES ('$name','$email','$tel','$text')");
 
         if ($result == true) {
-            echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.php'>Вернуться на сайт</a> </button>";
+            echo " <h1> <b>Спасибо</b>, данные отправлены!</h1>  </br>  <button> <a style='margin: 1em; font-size: 2em' href='/index.html'>Вернуться на сайт</a> </button>";
         } else {
             echo "Упс, что то пошло не так ;(";
         }

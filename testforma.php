@@ -11,6 +11,35 @@
     <link rel="icon" href="/favicon.ico">
 
     <title>Маска для поля ввода телефона </title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        var yaParams = {
+            ipaddress: "<? echo $_SERVER['REMOTE_ADDR']; ?>"
+        };
+    </script>
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(62862643, "init", {
+            params: window.yaParams,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/62862643" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -40,8 +69,7 @@
 
                     <div class="form-group">
                         <label for="">Введите номер телефона</label>
-                        <input type="text" class="form-control" id="" name="user_phone"
-                            placeholder="+7 (999) 99 99 999">
+                        <input type="text" class="form-control" id="" name="user_phone" placeholder="+7 (999) 99 99 999">
                     </div>
 
                     <div class="form-group">
@@ -65,7 +93,7 @@
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#phone").mask("+7 (999) 99-99-999");
         });
     </script>
