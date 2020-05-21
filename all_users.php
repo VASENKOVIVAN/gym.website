@@ -68,10 +68,10 @@
                     if (isset($_POST["name"])) {
                         //Если это запрос на обновление, то обновляем
                         if (isset($_GET['red_id'])) {
-                            $rows = mysqli_query($mysqli, "UPDATE `Сlients` SET `surname` = '{$_POST['surname']}',`name` = '{$_POST['name']}',`patronymic` = '{$_POST['patronymic']}',`address` = '{$_POST['address']}',`tel` = '{$_POST['tel']}',`ch_subscription` = '{$_POST['ch_subscription']}' ,`ch_trainer` = '{$_POST['ch_trainer']}'WHERE `id`={$_GET['red_id']}");
+                            $rows = mysqli_query($mysqli, "UPDATE `Сlients` SET `surname` = '{$_POST['surname']}',`name` = '{$_POST['name']}',`patronymic` = '{$_POST['patronymic']}',`address` = '{$_POST['address']}',`tel` = '{$_POST['tel']}',`ch_subscription` = '{$_POST['ch_subscription']}',`date_get` = '{$_POST['date_get']}' ,`ch_trainer` = '{$_POST['ch_trainer']}'WHERE `id`={$_GET['red_id']}");
                         } else {
                             //Иначе вставляем данные, подставляя их в запрос
-                            $rows = mysqli_query($mysqli, "INSERT INTO `Сlients` (`surname`, `name`, `patronymic`, `address`, `tel`, `ch_subscription`, `ch_trainer`) VALUES ('{$_POST['surname']}', '{$_POST['name']}', '{$_POST['patronymic']}', '{$_POST['address']}', '{$_POST['tel']}', '{$_POST['ch_subscription']}', '{$_POST['ch_trainer']}')");
+                            $rows = mysqli_query($mysqli, "INSERT INTO `Сlients` (`surname`, `name`, `patronymic`, `address`, `tel`, `ch_subscription`, `dage_get`, `ch_trainer`) VALUES ('{$_POST['surname']}', '{$_POST['name']}', '{$_POST['patronymic']}', '{$_POST['address']}', '{$_POST['tel']}', '{$_POST['ch_subscription']}', '{$_POST['date_get']}', '{$_POST['ch_trainer']}')");
                         }
 
                         //Если вставка прошла успешно
@@ -84,7 +84,7 @@
 
                     //Если передана переменная red_id, то надо обновлять данные. Для начала достанем их из БД
                     if (isset($_GET['red_id'])) {
-                        $rows = mysqli_query($mysqli, "SELECT `id`, `surname`, `name`, `patronymic`, `address`, `tel`, `ch_subscription`, `ch_trainer` FROM `Сlients` WHERE `id`={$_GET['red_id']}");
+                        $rows = mysqli_query($mysqli, "SELECT `id`, `surname`, `name`, `patronymic`, `address`, `tel`, `ch_subscription`, `date_get`, `ch_trainer` FROM `Сlients` WHERE `id`={$_GET['red_id']}");
                         $product = mysqli_fetch_array($rows);
                     }
                     //////////////// end ВОТ ТУТ РЕДАКТИРУЕМ СТРОКУ
@@ -140,6 +140,10 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>Дата:</td>
+                                <td><input style="width: 400px" type="date" name="date_get" value="<?= isset($_GET['red_id']) ? $product['date'] : ''; ?>"></td>
+                            </tr>
+                            <tr>
                                 <td>Тренер:</td>
                                 <td>
                                     <select style="width: 400px" type="text" name="ch_trainer">
@@ -177,13 +181,14 @@
                             <td style=" background: rgb(215, 248, 152); text-align: center">Адрес</td>
                             <td style="width: 170px; background: rgb(215, 248, 152); text-align: center">Телефон</td>
                             <td style="width: 150px; background: rgb(215, 248, 152); text-align: center">Абонемент</td>
+                            <td style="width: 150px; background: rgb(215, 248, 152); text-align: center">Дата выдачи абонемента</td>
                             <td style="width: 150px; background: rgb(215, 248, 152); text-align: center">Тренер</td>
                             <td style="width: 70px; background: rgb(152, 218, 248); text-align: center">Изменить</td>
                             <td style="width: 70px; background: rgb(248, 191, 152); text-align: center">Удалить</td>
                         </tr>
 
                         <?php
-                        $rows = mysqli_query($mysqli, "SELECT id, surname, name, patronymic, address, tel, ch_subscription, ch_trainer FROM `Сlients`");
+                        $rows = mysqli_query($mysqli, "SELECT id, surname, name, patronymic, address, tel, ch_subscription, date_get, ch_trainer FROM `Сlients`");
                         while ($stroka = mysqli_fetch_array($rows)) {
 
                             echo "<tr>";
@@ -192,8 +197,9 @@
                             echo "<td style='overflow-wrap: break-word'>" . $stroka['name'] . "</td>";
                             echo "<td style='overflow-wrap: break-word'>" . $stroka['patronymic'] . "</td>";
                             echo "<td style='overflow-wrap: break-word'>" . $stroka['address'] . "</td>";
-                            echo "<td style='overflow-wrap: break-word'>" . $stroka['tel'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word; text-align: center'>" . $stroka['tel'] . "</td>";
                             echo "<td style='overflow-wrap: break-word'>" . $stroka['ch_subscription'] . "</td>";
+                            echo "<td style='overflow-wrap: break-word; text-align: center'>" . $stroka['date_get'] . "</td>";
                             echo "<td style='overflow-wrap: break-word'>" . $stroka['ch_trainer'] . "</td>";
                             echo "<td style='text-align: center'><a href='?red_id={$stroka['id']}'>Изменить</a></td>";
                             echo "<td style='text-align: center'><a href='?del_id={$stroka['id']}'>Удалить</a></td>";
